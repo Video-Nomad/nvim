@@ -20,8 +20,8 @@ map('n', '<leader>q', vim.diagnostic.setloclist)
 map('n', '<leader>e', vim.diagnostic.open_float)
 
 -- Allows to move highlited code
-map('v', 'J', ":m '>+1<CR>gv=gv")
-map('v', 'K', ":m '<-2<CR>gv=gv")
+map('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
+map('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Allows to quickly move cursor if in insert mode
 map('i', '<A-h>', '<Esc>', { silent = true })
@@ -30,7 +30,7 @@ map('i', '<A-k>', '<Esc>kl', { silent = true })
 map('i', '<A-l>', '<Esc>ll', { silent = true })
 
 -- Keep the cursor in place when appending bottom line
-map('n', 'J', 'mzJ`z')
+map('n', 'J', 'mzJ`z', { silent = true })
 
 -- Toggle wrapping
 map('n', '<A-z>', ':set wrap!<CR>', { silent = true })
@@ -47,8 +47,8 @@ map('n', '<leader>j', function()
 end, { noremap = true, silent = true })
 
 -- Keep cursor in the middle when jumping half a screen
-map('n', '<C-d>', '<C-d>zz')
-map('n', '<C-u>', '<C-u>zz')
+map('n', '<C-d>', '<C-d>zz', { silent = true })
+map('n', '<C-u>', '<C-u>zz', { silent = true })
 
 -- Keep search terms in the middle
 map('n', 'n', 'nzzzv')
