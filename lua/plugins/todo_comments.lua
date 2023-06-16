@@ -2,15 +2,7 @@ local M = { 'folke/todo-comments.nvim' }
 
 M.event = "VeryLazy"
 
-M.keys = {
-  {
-    '<leader>wt',
-    "<CMD>TodoTelescope keywords=FIX,TODO,HACK,WARN,PERF,TEST,FIXME,BUG,FIXIT,ISSUE,WIP,FINISH,UNFINISHED<CR>",
-    desc = 'Toggle TodoTelescope',
-    mode = 'n'
-  },
-  { '<leader>wn', "<CMD>TodoTelescope keywords=NOTE<CR>", desc = 'Toggle TodoTelescope Notes', mode = 'n' }
-}
+M.keys = { { '<leader>wt' }, { '<leader>wn' } }
 
 M.opts = {
   signs = true,

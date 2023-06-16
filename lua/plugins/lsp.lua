@@ -1,5 +1,7 @@
 local M = { 'neovim/nvim-lspconfig' }
 
+M.event = "VeryLazy"
+
 M.dependencies = {
   'hrsh7th/nvim-cmp',
   'williamboman/mason.nvim',
@@ -41,8 +43,18 @@ M.config = function()
     rust_analyzer = {
     },
     cssls = {
+      css = {
+        lint = {
+          unknownAtRules = "ignore"
+        }
+      }
+    },
+    tailwindcss = {
     },
     html = {
+      format = {
+        wrapLineLength = 140
+      }
     },
     clangd = {
     },
@@ -87,6 +99,11 @@ M.config = function()
         settings = servers[server_name],
       }
     end,
+  }
+
+  -- Some custom stuff for html to attach to htmldjango
+  require('lspconfig')['html'].setup {
+    filetypes = { 'html', 'htmldjango' }
   }
 
   -- Show hover popup with a border

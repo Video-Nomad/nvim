@@ -51,20 +51,20 @@ map('n', '<C-d>', '<C-d>zz', { silent = true })
 map('n', '<C-u>', '<C-u>zz', { silent = true })
 
 -- Keep search terms in the middle
-map('n', 'n', 'nzzzv')
-map('n', 'N', 'Nzzzv')
+map('n', 'n', 'nzzzv', { silent = true })
+map('n', 'N', 'Nzzzv', { silent = true })
 
 -- Special paste that keeps the original value in the register
 map('x', 'p', [["_dP]])
 
 -- Delete into void register. If we want to copy - just use "c" instead
-map({ 'n', 'v' }, 'd', [["_d]])
+map({ 'n', 'v' }, 'd', [["_d]], { silent = true })
 -- map('n', 'x', [["_x]])
 -- map('v', 'x', [[_x]])
 
 -- Repalce macro key for visual block
-map({ 'n', 'v' }, 'q', '<c-v>')
+map({ 'n', 'v' }, 'q', '<c-v>', { silent = true })
 
 -- There's a reason this is mapped to "nop(e)"
-map('n', 'Q', '<nop>')
+map('n', 'Q', '<nop>', { silent = true })
 --map('n', '<Tab>', '<nop>')

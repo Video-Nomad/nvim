@@ -1,8 +1,10 @@
 local M = { 'norcalli/nvim-colorizer.lua' }
 
-M.event = "VeryLazy"
+M.lazy = true
 
 M.keys = { { '<leader>hc', '<cmd>ColorizerToggle<CR>' } }
+
+M.cmds = { 'ColorizerToggle' }
 
 M.config = function()
   vim.o.termguicolors = true

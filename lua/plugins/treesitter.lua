@@ -26,6 +26,7 @@ M.config = function()
       'regex',
       'markdown',
       'json',
+      'comment'
     },
 
     highlight = {

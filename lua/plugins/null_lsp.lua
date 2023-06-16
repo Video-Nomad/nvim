@@ -10,8 +10,15 @@ M.config = function()
   local null_ls = require('null-ls')
   null_ls.setup({
     sources = {
-      null_ls.builtins.formatting.prettierd,
-      null_ls.builtins.formatting.djlint,
+      -- Linting
+      null_ls.builtins.diagnostics.djlint.with({
+        extra_args = {
+          '--ignore "T003"',
+          '--indent 2',
+        },
+      }),
+      -- Formatting
+      null_ls.builtins.formatting.isort,
       null_ls.builtins.formatting.autopep8.with({
         extra_args = {
           "--max-line-length=140",
@@ -23,7 +30,6 @@ M.config = function()
           "E402"
         }
       }),
-      null_ls.builtins.formatting.isort,
     }
   })
 end
