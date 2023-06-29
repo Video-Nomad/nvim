@@ -33,6 +33,9 @@ M.config = function()
         '/*.ico',
         '/*.png',
         '/*.mll',
+        '/*.webp',
+        '/*.jpg',
+        '/*.jpeg',
       }
     },
     -- Extensions config
