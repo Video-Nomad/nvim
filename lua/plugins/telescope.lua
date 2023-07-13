@@ -25,18 +25,19 @@ M.config = function()
         },
       },
       file_ignore_patterns = {
-        '/*.pyc',
-        '/*.pyd',
-        '/*.otf',
-        '/*.ttf',
-        '/*.code.workspace',
-        '/*.ico',
-        '/*.png',
-        '/*.mll',
-        '/*.webp',
-        '/*.jpg',
-        '/*.jpeg',
-      }
+        '%.pyc',
+        '%.pyd',
+        '%.otf',
+        '%.ttf',
+        '%.code.workspace',
+        '%.ico',
+        '%.png',
+        '%.mll',
+        '%.webp',
+        '%.jpg',
+        '%.jpeg',
+        '^node_modules',
+      },
     },
     -- Extensions config
     extensions = {
@@ -55,7 +56,6 @@ M.config = function()
   -- Load extensions
   require('telescope').load_extension('undo')
   require('telescope').load_extension('project')
-  --require('telescope').load_extension('noice')
   require('telescope').load_extension('todo-comments')
 
   -- Configure Telescope Keymaps
@@ -69,7 +69,6 @@ M.config = function()
   local search_files_picker = function() builtin.find_files({ layout_strategy = 'flex', follow = true }) end
   local fuzzy_find = function() builtin.current_buffer_fuzzy_find(themes.get_ivy { winblend = 0, previewer = false }) end
   local spelling_picker = function() builtin.spell_suggest(themes.get_cursor { winblend = 0, previewer = false }) end
-  --local noice = function() extensions.noice.noice({ layout_strategy = 'vertical' }) end
 
   -- Todo keywords
   local todo_notes = function() extensions['todo-comments'].todo({ keywords = "NOTE", layout_strategy = 'vertical' }) end
@@ -117,7 +116,6 @@ M.config = function()
   map('n', '<leader>ds', lsp_doc_symbols, { desc = '[D]ocument [S]ymbols' })
   map('n', '<leader>ws', local_symbols, { desc = '[W]orkspace [S]ymbols' })
   map('n', '<leader>ss', spelling_picker, { desc = '[S]pelling [S]uggestion' })
-  --map('n', '<leader>sm', noice, { desc = '[S]how [M]essages' })
   map('n', '<leader>wt', todo, { desc = '[W]orkspace [T]odo' })
   map('n', '<leader>wn', todo_notes, { desc = '[W]orkspace [N]otes' })
 end

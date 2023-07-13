@@ -29,12 +29,12 @@ M.config = function()
     end,
     { expr = true, desc = 'Accept AI Completion' })
 
-  vim.keymap.set('i', '<A-Right>', function()
+  vim.keymap.set('i', '<A-]>', function()
       return vim.fn['codeium#CycleCompletions'](1)
     end,
     { expr = true, desc = 'Cycle AI Completions +' })
 
-  vim.keymap.set('i', '<A-Left>', function(
+  vim.keymap.set('i', '<A-[>', function(
     )
       return vim.fn['codeium#CycleCompletions'](-1)
     end,

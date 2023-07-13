@@ -56,6 +56,8 @@ M.config = function()
         wrapLineLength = 140
       }
     },
+    volar = {
+    },
     clangd = {
     },
     pyright = {
@@ -104,6 +106,10 @@ M.config = function()
   -- Some custom stuff for html to attach to htmldjango
   require('lspconfig')['html'].setup {
     filetypes = { 'html', 'htmldjango' }
+  }
+
+  require('lspconfig')['volar'].setup {
+    filetypes = { 'typescript', 'vue', 'javascript' }
   }
 
   -- Show hover popup with a border

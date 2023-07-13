@@ -8,6 +8,7 @@ end
 
 M.dependencies = {
   'nvim-treesitter/nvim-treesitter-textobjects',
+  'nvim-treesitter/playground'
 }
 
 M.config = function()
@@ -16,21 +17,24 @@ M.config = function()
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = {
       'c',
+      'comment',
       'cpp',
-      'lua',
-      'python',
+      'css',
       'html',
       'htmldjango',
       'javascript',
-      'vue',
-      'rust',
-      'vim',
-      'yaml',
-      'toml',
-      'regex',
-      'markdown',
       'json',
-      'comment'
+      'lua',
+      'markdown',
+      'python',
+      'regex',
+      'rust',
+      'scss',
+      'toml',
+      'typescript',
+      'vim',
+      'vue',
+      'yaml',
     },
 
     highlight = {
@@ -43,7 +47,7 @@ M.config = function()
     },
     indent = {
       enable = true,
-      disable = { 'python' },
+      disable = { 'python' }, -- TODO: Do we want to disable this?
     },
     incremental_selection = {
       enable = true,
@@ -60,6 +64,8 @@ M.config = function()
         lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
         keymaps = {
           -- You can use the capture groups defined in textobjects.scm
+          ['at'] = '@tag.outer',
+          ['it'] = '@tag.inner',
           ['aa'] = '@parameter.outer',
           ['ia'] = '@parameter.inner',
           ['af'] = '@function.outer',
