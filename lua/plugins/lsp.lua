@@ -68,6 +68,8 @@ M.config = function()
         }
       }
     },
+    gopls = {
+    },
     lua_ls = {
       Lua = {
         workspace = { checkThirdParty = false },

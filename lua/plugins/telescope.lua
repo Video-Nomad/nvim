@@ -37,6 +37,7 @@ M.config = function()
         '%.jpg',
         '%.jpeg',
         '^node_modules',
+        '\\migrations\\.*%.py',
       },
     },
     -- Extensions config
@@ -71,10 +72,11 @@ M.config = function()
   local spelling_picker = function() builtin.spell_suggest(themes.get_cursor { winblend = 0, previewer = false }) end
 
   -- Todo keywords
-  local todo_notes = function() extensions['todo-comments'].todo({ keywords = "NOTE", layout_strategy = 'vertical' }) end
+  local todo_notes = function() extensions['todo-comments'].todo({ keywords = "NOTE,INFO", layout_strategy = 'vertical' }) end
   local function todo()
     extensions['todo-comments'].todo({
-      keywords = "FIX,TODO,HACK,WARN,PERF,TEST,FIXME,BUG,FIXIT,ISSUE,WIP,FINISH,UNFINISHED",
+      keywords =
+      "FIX,FIXME,BUG,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED",
       layout_strategy = 'vertical',
     })
   end
@@ -104,7 +106,7 @@ M.config = function()
   map('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
   map('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
   map('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-  map('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+  -- map('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' }) -- User by Spectre
   map('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
   map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
   map('n', 'gr', builtin.lsp_references, { desc = '[G]oto [R]eferences' })
@@ -115,7 +117,7 @@ M.config = function()
   map('n', '<leader>/', fuzzy_find, { desc = '[/] Fuzzily search in current buffer]' })
   map('n', '<leader>ds', lsp_doc_symbols, { desc = '[D]ocument [S]ymbols' })
   map('n', '<leader>ws', local_symbols, { desc = '[W]orkspace [S]ymbols' })
-  map('n', '<leader>ss', spelling_picker, { desc = '[S]pelling [S]uggestion' })
+  map('n', '<leader>S', spelling_picker, { desc = '[S]pelling [S]uggestion' })
   map('n', '<leader>wt', todo, { desc = '[W]orkspace [T]odo' })
   map('n', '<leader>wn', todo_notes, { desc = '[W]orkspace [N]otes' })
 end

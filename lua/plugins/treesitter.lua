@@ -20,12 +20,14 @@ M.config = function()
       'comment',
       'cpp',
       'css',
+      'go',
       'html',
       'htmldjango',
       'javascript',
       'json',
       'lua',
       'markdown',
+      'markdown_inline',
       'python',
       'regex',
       'rust',
@@ -39,6 +41,8 @@ M.config = function()
 
     highlight = {
       enable = true,
+      additional_vim_regex_highlighting = { "markdown" },
+
       -- We can disable treesitter highligh on large files
       -- disable = function(lang, buf)
       --   return vim.api.nvim_buf_line_count(buf) > 5000

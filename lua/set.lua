@@ -51,6 +51,7 @@ vim.o.breakindent = true
 vim.o.linebreak = true
 vim.o.showbreak = '   ↪'
 -- vim.opt.display = 'lastline'
+vim.o.wrap = false
 
 -- Save undo history
 vim.o.swapfile = false
