@@ -64,7 +64,7 @@ M.config = function()
       python = {
         analysis = {
           root_dir = ".",
-          diagnosticMode = "openFilesOnly",
+          diagnosticMode = "openFilesOnly", -- ["openFilesOnly", "workspace"]
         }
       }
     },

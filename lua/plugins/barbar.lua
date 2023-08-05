@@ -12,7 +12,7 @@ end
 M.opts = {
   animation = false,
   auto_hide = true,
-  maximum_padding = 1,
+  maximum_padding = 2,
   minimum_padding = 1,
   letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
   icons = {
