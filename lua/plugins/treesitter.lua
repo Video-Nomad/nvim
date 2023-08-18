@@ -39,9 +39,15 @@ M.config = function()
       'yaml',
     },
 
+    ignore_install = {},
+    modules = {},
+
+    sync_install = false,
+    auto_install = true,
+
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = { "markdown" },
+      additional_vim_regex_highlighting = { "markdown", "python" },
 
       -- We can disable treesitter highligh on large files
       -- disable = function(lang, buf)

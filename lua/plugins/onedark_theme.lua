@@ -29,7 +29,9 @@ M.opts = {
   },
   -- Custom Highlights --
   colors = {}, -- Override default colors
-  highlights = {}, -- Override highlight groups
+  highlights = {
+    ["@function.builtin"] = {fg = '#61afef' },
+  }, -- Override highlight groups
   -- Plugins Config --
   diagnostics = {
     darker = true, -- darker colors for diagnostic
@@ -37,5 +39,39 @@ M.opts = {
     background = true, -- use background color for virtual text
   },
 }
+
+--[[
+
+Example custom colors and Highlights config
+
+require('onedark').setup {
+  colors = {
+    bright_orange = "#ff8800",    -- define a new color
+    green = '#00ffaa',            -- redefine an existing color
+  },
+  highlights = {
+    ["@keyword"] = {fg = '$green'},
+    ["@string"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
+    ["@function"] = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    ["@function.builtin"] = {fg = '#0059ff'}
+  }
+}
+Note that TreeSitter keywords have been changed after neovim version 0.8 and onwards. TS prefix is trimmed and lowercase words should be used separated with '.'
+
+The old way before neovim 0.8 looks like this. For all keywords see this file from line 133 to 257
+
+require('onedark').setup {
+  colors = {
+    bright_orange = "#ff8800",    -- define a new color
+    green = '#00ffaa',            -- redefine an existing color
+  },
+  highlights = {
+    TSKeyword = {fg = '$green'},
+    TSString = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
+    TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    TSFuncBuiltin = {fg = '#0059ff'}
+  }
+}
+]]
 
 return M

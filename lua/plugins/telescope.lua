@@ -4,7 +4,7 @@ M.branch = '0.1.x'
 
 M.dependencies = {
   'nvim-lua/plenary.nvim',
-  'debugloop/telescope-undo.nvim',
+  -- 'debugloop/telescope-undo.nvim',
   'nvim-telescope/telescope-project.nvim',
 }
 
@@ -46,16 +46,16 @@ M.config = function()
         theme = 'dropdown',
         sync_with_nvim_tree = true,
       },
-      undo = {
-        initial_mode = 'normal',
-        use_delta = false,
-        layout_strategy = 'vertical',
-      },
+      -- undo = {
+      --   initial_mode = 'normal',
+      --   use_delta = false,
+      --   layout_strategy = 'vertical',
+      -- },
     },
   })
 
   -- Load extensions
-  require('telescope').load_extension('undo')
+  -- require('telescope').load_extension('undo')
   require('telescope').load_extension('project')
   require('telescope').load_extension('todo-comments')
 
@@ -110,7 +110,7 @@ M.config = function()
   map('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
   map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
   map('n', 'gr', builtin.lsp_references, { desc = '[G]oto [R]eferences' })
-  map('n', '<leader>u', extensions.undo.undo, { desc = 'Telescope Undo' })
+  -- map('n', '<leader>u', extensions.undo.undo, { desc = 'Telescope Undo' })
   map('n', '<leader>pm', extensions.project.project, { desc = '[P]roject [M]anager' })
   map('n', '<leader>sG', git_files_picker, { desc = '[S]earch [Git] files' })
   map('n', '<leader>sf', search_files_picker, { desc = '[S]earch [F]iles' })

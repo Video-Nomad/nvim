@@ -36,7 +36,7 @@ M.opts = {
   filesystem_watchers = {
     enable = true,
     debounce_delay = 300,
-    ignore_dirs = { "./target/debug/", "./target/release/", "./git/" },
+    ignore_dirs = { "./target/debug/", "./target/release/", "./.git/", "./git/" },
   },
   git = {
     ignore = false

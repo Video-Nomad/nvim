@@ -12,11 +12,11 @@ end
 M.opts = {
   animation = false,
   auto_hide = true,
-  maximum_padding = 2,
+  maximum_padding = 4,
   minimum_padding = 1,
+  focus_on_close = 'right',
   letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
   icons = {
-    separator = { left = '', right = '' },
     diagnostics = {
       [vim.diagnostic.severity.ERROR] = { enabled = true, icon = " " },
       [vim.diagnostic.severity.WARN] = { enabled = true, icon = " " },
@@ -57,6 +57,7 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- Close commands
 --                 :BufferCloseAllButCurrent
 --                 :BufferCloseAllButPinned
+map('n', '<leader>bc', '<CMD>BufferCloseAllButCurrentOrPinned<CR>', opts)
 --                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
