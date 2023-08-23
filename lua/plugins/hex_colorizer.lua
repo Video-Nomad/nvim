@@ -1,7 +1,5 @@
 local M = { 'NvChad/nvim-colorizer.lua' }
 
-M.lazy = true
-
 M.keys = { { '<leader>hc', '<cmd>ColorizerToggle<CR>' } }
 
 M.cmds = { 'ColorizerToggle' }

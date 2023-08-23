@@ -4,6 +4,8 @@ M.name = "barbecue"
 
 M.version = "*"
 
+M.event = "VeryLazy"
+
 M.dependencies = {
   "SmiteshP/nvim-navic",
   "nvim-tree/nvim-web-devicons", -- optional dependency

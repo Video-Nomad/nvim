@@ -1,7 +1,5 @@
 local M = { 'NvChad/nvterm' }
 
-M.lazy = true
-
 M.keys = {
   { '<A-s>', function()
     require("nvterm.terminal").toggle "horizontal"

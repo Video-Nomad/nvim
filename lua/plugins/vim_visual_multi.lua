@@ -1,6 +1,10 @@
 local M = { 'mg979/vim-visual-multi' }
 
-M.event = "VeryLazy"
+M.keys = {
+  { "<C-n>",    mode = "n" },
+  { "<C-Down>", mode = "n" },
+  { "<C-Up>",   mode = "n" },
+}
 
 M.branch = 'master'
 

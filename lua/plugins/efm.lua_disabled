@@ -1,0 +1,49 @@
+local M = { 'creativenull/efmls-configs-nvim' }
+
+M.version = 'v1.x.x'
+M.event = "VeryLazy"
+
+M.dependencies = {
+  'neovim/nvim-lspconfig',
+}
+
+M.config = function()
+  -- Register linters and formatters per language
+  local autopep8 = require('efmls-configs.formatters.autopep8')
+  local languages = {
+    python = { autopep8 }
+  }
+
+  -- Or use the defaults provided by this plugin
+  -- check doc/SUPPORTED_LIST.md for the supported languages
+  --
+  -- local languages = require('efmls-configs.defaults').languages()
+
+  local efmls_config = {
+    filetypes = vim.tbl_keys(languages),
+    settings = {
+      rootMarkers = { '.git/' },
+      languages = languages,
+    },
+    init_options = {
+      documentFormatting = true,
+      documentRangeFormatting = true,
+    },
+  }
+
+  local on_attach = function(_, bufnr)
+    -- Create a command `:Format` local to the LSP buffer
+    vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+      vim.lsp.buf.format({ async = true })
+    end, { desc = 'Format current buffer with LSP' })
+  end
+
+  require('lspconfig').efm.setup(vim.tbl_extend('force', efmls_config, {
+    -- Pass your custom lsp config below like on_attach and capabilities
+    --
+    on_attach = on_attach,
+    -- capabilities = capabilities,
+  }))
+end
+
+return M

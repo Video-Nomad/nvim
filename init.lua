@@ -1,9 +1,5 @@
 -- Main entry point for NeoVim
 
--- Disable default file browser
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Installing Lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -25,7 +21,7 @@ vim.g.maplocalleader = ' '
 -- Lazy package manager options
 local lazy_opts = {
   defaults = {
-    lazy = false,
+    lazy = true,
   },
   ui = {
     border = "rounded"
@@ -39,7 +35,6 @@ local lazy_opts = {
 require('lazy').setup('plugins', lazy_opts)
 
 -- Color theme
--- require('onedark').load()
 vim.cmd([[colorscheme onedark]])
 
 -- Load everything else

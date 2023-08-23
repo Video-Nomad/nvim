@@ -1,5 +1,5 @@
 local M = { 'tpope/vim-fugitive' }
 
-M.event = "VeryLazy"
+M.cmd = {"Git"}
 
 return M

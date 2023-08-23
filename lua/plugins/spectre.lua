@@ -2,8 +2,6 @@ local M = { 'nvim-pack/nvim-spectre' }
 
 M.dependencies = { 'nvim-lua/plenary.nvim' }
 
-M.lazy = true
-
 M.keys = {
   { '<leader>ss' }, { '<leader>sw' }, { '<leader>sp' }
 }

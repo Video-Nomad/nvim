@@ -2,10 +2,12 @@ local M = { 'nvim-telescope/telescope.nvim' }
 
 M.branch = '0.1.x'
 
+M.event = "VeryLazy"
+
 M.dependencies = {
   'nvim-lua/plenary.nvim',
-  -- 'debugloop/telescope-undo.nvim',
   'nvim-telescope/telescope-project.nvim',
+  'nvim-telescope/telescope-fzf-native.nvim',
 }
 
 M.config = function()

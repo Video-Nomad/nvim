@@ -64,7 +64,7 @@ M.config = function()
       python = {
         analysis = {
           root_dir = ".",
-          diagnosticMode = "workspace", -- ["openFilesOnly", "workspace"]
+          diagnosticMode = "openFilesOnly", -- ["openFilesOnly", "workspace"]
         }
       }
     },
@@ -74,6 +74,9 @@ M.config = function()
       Lua = {
         workspace = { checkThirdParty = false },
         telemetry = { enable = false },
+        diagnostics = {
+          disable = { 'missing-fields' }
+        }
       },
     },
   }

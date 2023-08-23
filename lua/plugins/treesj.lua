@@ -2,8 +2,6 @@ local M = { 'Wansmer/treesj' }
 
 M.dependencies = { 'nvim-treesitter/nvim-treesitter' }
 
-M.event = "VeryLazy"
-
 M.keys = { '<leader>m', '<leader>j', '<leader>s' }
 
 M.opts = {

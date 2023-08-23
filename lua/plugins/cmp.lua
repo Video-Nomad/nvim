@@ -1,7 +1,5 @@
 local M = { 'hrsh7th/nvim-cmp' }
 
-M.event = "VeryLazy"
-
 M.dependencies = {
   -- Essentials
   'hrsh7th/cmp-nvim-lsp',
@@ -10,13 +8,13 @@ M.dependencies = {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
 
-  -- Snippy stuff
-  'dcampos/nvim-snippy',
-  'dcampos/cmp-snippy',
+  -- Snippets
+  'L3MON4D3/LuaSnip',
+  'saadparwaiz1/cmp_luasnip',
+  'rafamadriz/friendly-snippets',
 
   -- Additional stuff
   'lukas-reineke/cmp-under-comparator',
-  -- 'rafamadriz/friendly-snippets',
 }
 
 M.event = "InsertEnter"
@@ -24,7 +22,12 @@ M.event = "InsertEnter"
 M.config = function()
   -- nvim-cmp setup
   local cmp = require('cmp')
-  local snippy = require('snippy')
+  local luasnip = require('luasnip')
+  require('luasnip.loaders.from_vscode').lazy_load()
+  luasnip.config.setup()
+
+  -- Additional snippets
+  -- require 'luasnip'.filetype_extend("python", { "base" })
 
   local icons = {
     Namespace     = "󰌗",
@@ -69,19 +72,6 @@ M.config = function()
     TabNine       = "",
   }
 
-  -- Setup snippy
-  snippy.setup({
-    mappings = {
-      is = {
-        ['<Tab>'] = 'expand_or_advance',
-        ['<S-Tab>'] = 'previous',
-      },
-      nx = {
-        ['<leader>x'] = 'cut_text',
-      },
-    },
-  })
-
   -- Setup cmp
   cmp.setup {
     preselect = cmp.PreselectMode.Item,
@@ -109,7 +99,7 @@ M.config = function()
     },
     snippet = {
       expand = function(args)
-        require('snippy').expand_snippet(args.body)
+        luasnip.lsp_expand(args.body)
       end,
     },
     formatting = {
@@ -142,9 +132,9 @@ M.config = function()
       { name = "path" },
       { name = 'nvim_lsp_signature_help' },
       { name = "nvim_lsp" },
-      { name = "nvim_lua" },
-      { name = "snippy" },
+      { name = "luasnip" },
       { name = "buffer" },
+      { name = "nvim_lua" },
     }),
   }
 end

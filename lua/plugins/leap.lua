@@ -1,7 +1,6 @@
 local M = { 'ggandor/leap.nvim' }
 
-
-M.event = "VeryLazy"
+M.keys = { "s", "S" }
 
 M.config = function()
   require('leap').add_default_mappings()

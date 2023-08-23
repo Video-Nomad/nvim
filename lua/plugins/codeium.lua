@@ -1,7 +1,5 @@
 local M = { 'Exafunction/codeium.vim' }
 
-M.lazy = true
-
 M.cmd = {
   "Codeium",
 }

@@ -1,7 +1,6 @@
 local M = { 'neomake/neomake' }
 
-M.event = 'VeryLazy'
-
+M.cmd = {"F5", "F7", "F8"}
 
 local function build()
   print("[Neomake] Running...")

@@ -36,7 +36,7 @@ map('n', 'J', 'mzJ`z', { silent = true })
 map('n', '<A-z>', ':set wrap!<CR>', { silent = true })
 
 -- Inserts a newline character based on the character under the cursor
-map('n', '<leader>j', function()
+map('n', '<C-j>', function()
   local line = vim.fn.getline('.')
   local char = line:sub(vim.fn.col('.'), vim.fn.col('.'))
   if char:match('%s') then

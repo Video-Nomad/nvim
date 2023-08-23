@@ -1,7 +1,5 @@
 local M = { 'nvim-telescope/telescope-fzf-native.nvim' }
 
-M.event = "VeryLazy"
-
 M.dependencies = {
   'nvim-telescope/telescope.nvim'
 }

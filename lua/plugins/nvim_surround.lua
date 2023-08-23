@@ -2,12 +2,13 @@ local M = { "kylechui/nvim-surround" }
 
 M.version = "*"
 
-M.event = "VeryLazy"
+M.keys = {
+  { 'S', mode = 'v' },
+  { 'ds',  mode = 'n' },
+}
 
 M.config = function()
-  require("nvim-surround").setup({
-    -- Configuration here, or leave empty to use defaults
-  })
-end
+    require("nvim-surround").setup()
+  end
 
 return M
