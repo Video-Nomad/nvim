@@ -23,6 +23,10 @@ map('n', '<leader>e', vim.diagnostic.open_float)
 map('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
 map('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 
+-- Keep visual selection when indenting and dedenting
+map('v', '<', '<gv^', { silent = true })
+map('v', '>', '>gv^', { silent = true })
+
 -- Allows to quickly move cursor if in insert mode
 map('i', '<A-h>', '<Esc>', { silent = true })
 map('i', '<A-j>', '<Esc>jl', { silent = true })

@@ -1,7 +1,7 @@
 local M = { 'mg979/vim-visual-multi' }
 
 M.keys = {
-  { "<C-n>",    mode = "n" },
+  { "<C-n>",    mode = { "n", "v" } },
   { "<C-Down>", mode = "n" },
   { "<C-Up>",   mode = "n" },
 }

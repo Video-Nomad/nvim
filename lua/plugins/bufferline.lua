@@ -8,28 +8,42 @@ M.dependencies = {
 
 M.event = "VeryLazy"
 
+local icon_map = {
+  ["error"] = " ",
+  ["warning"] = " ",
+  ["info"] = " ",
+  ["hint"] = " "
+}
+
 M.config = function()
   vim.opt.termguicolors = true
   local bufferline = require('bufferline')
   bufferline.setup({
     options = {
       style_preset = bufferline.style_preset.no_italic,
-      right_mouse_command = "bdelete %d",
+      indicator = {
+        icon = ' ⪧', --  ⇨▪■■⩺⪧⫸⟫
+        style = 'icon'
+      },
+      right_mouse_command = "bd %d",
       left_mouse_command = "buffer %d",
-      middle_mouse_command = "bdelete %d",
+      middle_mouse_command = "bd %d",
       max_name_length = 20,
-      tab_size = 20,
+      tab_size = 22,
       diagnostics = "nvim_lsp",
       always_show_bufferline = false,
       diagnostics_indicator = function(count, level)
-        local icon = level:match("error") and " " or " "
+        local icon = icon_map[level] or ""
         return " " .. icon .. count
       end
     },
     highlights = {
       buffer_selected = {
         fg = "#d19a66",
-      }
+      },
+      indicator_selected = {
+        fg = "#d19a66",
+      },
     }
   })
 
@@ -39,6 +53,7 @@ M.config = function()
   -- Move to previous/next
   map('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', opts)
   map('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', opts)
+
   -- Re-order to previous/next
   map('n', '<A-<>', '<Cmd>BufferLineMovePrev<CR>', opts)
   map('n', '<A->>', '<Cmd>BufferLineMoveNext<CR>', opts)

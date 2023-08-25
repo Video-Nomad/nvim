@@ -17,6 +17,7 @@ M.config = function()
           '--indent 2',
         },
       }),
+      null_ls.builtins.diagnostics.pylint,
       -- Formatting
       null_ls.builtins.formatting.isort,
       null_ls.builtins.formatting.autopep8.with({
