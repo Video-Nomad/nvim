@@ -33,6 +33,10 @@ map('i', '<A-j>', '<Esc>jl', { silent = true })
 map('i', '<A-k>', '<Esc>kl', { silent = true })
 map('i', '<A-l>', '<Esc>ll', { silent = true })
 
+-- QuickFix navigation
+map('n', '<A-n>', '<cmd>cnext<CR>', { silent = true })
+map('n', '<A-p>', '<cmd>cprev<CR>', { silent = true })
+
 -- Keep the cursor in place when appending bottom line
 map('n', 'J', 'mzJ`z', { silent = true })
 

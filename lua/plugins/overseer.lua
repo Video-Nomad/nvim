@@ -1,7 +1,5 @@
 local M = { "stevearc/overseer.nvim" }
 
-M.commit = "3047ede61cc1308069ad1184c0d447ebee92d749"
-
 M.cmd = { "CompilerOpen", "CompilerToggleResults" }
 
 M.opts = {

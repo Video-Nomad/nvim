@@ -80,6 +80,11 @@ vim.opt.list = true
 vim.o.completeopt = 'menu,menuone,noselect'
 vim.o.pumheight = 11
 
+-- Set spelling check highlight group to purple
+vim.api.nvim_set_hl(0, 'SpellBad', { fg = 'purple', bold = true, nocombine = true, underline = true })
+-- Set spell checker to support CamelCase
+vim.opt.spelloptions = 'camel,noplainbuffer'
+
 -- Change diagnostic signs (icons)
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 for type, icon in pairs(signs) do

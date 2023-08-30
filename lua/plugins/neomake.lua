@@ -1,6 +1,10 @@
 local M = { 'neomake/neomake' }
 
-M.cmd = {"F5", "F7", "F8"}
+M.keys = {
+  "<F5>",
+  "<F7>",
+  "<F8>"
+}
 
 local function build()
   print("[Neomake] Running...")
