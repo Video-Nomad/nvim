@@ -22,7 +22,7 @@ M.config = function()
     options = {
       style_preset = bufferline.style_preset.no_italic,
       indicator = {
-        icon = ' ⩔ ', --  ⇨▪■⩺⩔⪧∇⫸∇◯⟫⪧⩒
+        icon = ' ⩺ ', --  ⇨▪■⩔⩺⩔⪧∇⫸∇◯⟫⪧⩒
         style = 'icon'
       },
       right_mouse_command = "bd %d",
@@ -36,6 +36,14 @@ M.config = function()
         local icon = icon_map[level] or ""
         return " " .. icon .. count
       end,
+      offsets = {
+        {
+          filetype = "NvimTree",
+          text = "Nvim Tree",
+          text_align = "left",
+          separator = true
+        }
+      },
     },
     highlights = {
       buffer_selected = {

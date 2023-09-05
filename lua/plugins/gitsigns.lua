@@ -1,6 +1,7 @@
 local M = { 'lewis6991/gitsigns.nvim' }
 
-M.event = "VeryLazy"
+-- M.event = "VeryLazy"
+M.lazy = false
 
 M.config = function()
   require('gitsigns').setup {

@@ -33,26 +33,18 @@ map('i', '<A-j>', '<Esc>jl', { silent = true })
 map('i', '<A-k>', '<Esc>kl', { silent = true })
 map('i', '<A-l>', '<Esc>ll', { silent = true })
 
+-- Shift+Tab to unindent in insert mode'
+map('i', '<S-Tab>', '<C-d>', { silent = true })
+
 -- QuickFix navigation
-map('n', '<A-n>', '<cmd>cnext<CR>', { silent = true })
-map('n', '<A-p>', '<cmd>cprev<CR>', { silent = true })
+map('n', '<A-n>', '<cmd>cn<CR>', { silent = true })
+map('n', '<A-p>', '<cmd>cp<CR>', { silent = true })
 
 -- Keep the cursor in place when appending bottom line
 map('n', 'J', 'mzJ`z', { silent = true })
 
 -- Toggle wrapping
 map('n', '<A-z>', ':set wrap!<CR>', { silent = true })
-
--- Inserts a newline character based on the character under the cursor
-map('n', '<C-j>', function()
-  local line = vim.fn.getline('.')
-  local char = line:sub(vim.fn.col('.'), vim.fn.col('.'))
-  if char:match('%s') then
-    vim.api.nvim_input('r\r<Esc>')
-  else
-    vim.api.nvim_input('i\r<Esc>')
-  end
-end, { noremap = true, silent = true })
 
 -- Keep cursor in the middle when jumping half a screen
 map('n', '<C-d>', '<C-d>zz', { silent = true })
@@ -67,12 +59,9 @@ map('x', 'p', [["_dP]])
 
 -- Delete into void register. If we want to copy - just use "c" instead
 map({ 'n', 'v' }, 'd', [["_d]], { silent = true })
--- map('n', 'x', [["_x]])
--- map('v', 'x', [[_x]])
 
 -- Repalce macro key for visual block
 map({ 'n', 'v' }, 'q', '<c-v>', { silent = true })
 
 -- There's a reason this is mapped to "nop(e)"
 map('n', 'Q', '<nop>', { silent = true })
---map('n', '<Tab>', '<nop>')
