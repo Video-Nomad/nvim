@@ -1,4 +1,4 @@
-local M = { 'lukas-reineke/indent-blankline.nvim' }
+local M = { "lukas-reineke/indent-blankline.nvim" }
 
 M.event = "VeryLazy"
 

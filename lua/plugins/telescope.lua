@@ -1,7 +1,5 @@
 local M = { 'nvim-telescope/telescope.nvim' }
 
--- M.branch = '0.1.x'
-
 M.event = "VeryLazy"
 
 M.dependencies = {
@@ -20,9 +18,7 @@ M.config = function()
       entry_prefix = '  ',
       layout_strategy = 'flex',
       follow = true,
-      sorting_strategy = "ascending",
       layout_config = {
-        prompt_position = "top",
         vertical = {
           width = 0.9,
           preview_cutoff = 0,
