@@ -26,7 +26,10 @@ M.config = function()
         horizontal = {
           width = 0.9,
           preview_cutoff = 0,
-        }
+        },
+        flex = {
+          flip_columns = 200
+        },
       },
       mappings = {
         i = {
@@ -57,6 +60,11 @@ M.config = function()
         width = 0.8,
       },
       find_files = {
+        layout_strategy = 'vertical',
+        layout_config = {
+          width = 0.5,
+        },
+        previewer = false,
       },
       git_files = {
       },
@@ -91,12 +99,19 @@ M.config = function()
         theme = 'dropdown',
         sync_with_nvim_tree = true,
       },
+      fzf = {
+        fuzzy = true,
+        override_generic_sorter = true,
+        override_file_sorter = true,
+        case_mode = "smart_case",
+      }
     },
   })
 
   -- Load extensions
   require('telescope').load_extension('project')
   require('telescope').load_extension('todo-comments')
+  require('telescope').load_extension('fzf')
 
   -- Configure Telescope Keymaps
   local map = vim.keymap.set

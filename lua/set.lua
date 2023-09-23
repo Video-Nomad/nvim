@@ -81,7 +81,7 @@ vim.o.completeopt = 'menu,menuone,noselect'
 vim.o.pumheight = 11
 
 -- Set spelling check highlight group to purple
-vim.api.nvim_set_hl(0, 'SpellBad', { fg = 'purple', bold = true, nocombine = true, underline = true })
+vim.api.nvim_set_hl(0, 'SpellBad', { fg = 'purple', bold = true, nocombine = true, undercurl = true })
 -- Set spell checker to support CamelCase
 vim.opt.spelloptions = 'camel,noplainbuffer'
 

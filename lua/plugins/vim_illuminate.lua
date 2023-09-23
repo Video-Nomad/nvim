@@ -1,5 +1,7 @@
 local M = { 'RRethy/vim-illuminate' }
 
+M.event = "VeryLazy"
+
 M.config = function()
   require('illuminate').configure({
     -- providers: provider used to get references in the buffer, ordered by priority

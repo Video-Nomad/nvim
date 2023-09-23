@@ -14,7 +14,7 @@ local function lsp_progress()
       component = '',
       progress = '',
       lsp_client_name = { pre = ' [', post = ']' },
-      spinner = { pre = ' ', post = '' },
+      spinner = { pre = ' ', post = ' ' },
     },
     display_components = { 'lsp_client_name', 'spinner' },
     timer = { progress_enddelay = 50, spinner = 1000, lsp_client_name_enddelay = 50 },
