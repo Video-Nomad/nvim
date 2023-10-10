@@ -79,6 +79,8 @@ M.config = function()
         }
       },
     },
+    jsonls = {
+    },
   }
 
   -- Setup neovim lua configuration

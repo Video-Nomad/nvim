@@ -62,6 +62,10 @@ M.config = function()
   map('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', opts)
   map('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', opts)
 
+  -- Navigate groups
+  map('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', opts)
+  map('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', opts)
+
   -- Re-order to previous/next
   map('n', '<A-<>', '<Cmd>BufferLineMovePrev<CR>', opts)
   map('n', '<A->>', '<Cmd>BufferLineMoveNext<CR>', opts)

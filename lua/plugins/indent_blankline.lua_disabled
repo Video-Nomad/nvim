@@ -1,0 +1,13 @@
+local M = { "lukas-reineke/indent-blankline.nvim" }
+
+M.main = 'ibl'
+
+M.event = "VeryLazy"
+
+M.config = function()
+  require("ibl").setup({
+    scope = { enabled = false },
+  })
+end
+
+return M
