@@ -56,6 +56,8 @@ M.config = function()
         wrapLineLength = 140
       }
     },
+    tsserver = {
+    },
     volar = {
     },
     clangd = {
@@ -81,6 +83,8 @@ M.config = function()
     },
     jsonls = {
     },
+    omnisharp = {
+    }
   }
 
   -- Setup neovim lua configuration

@@ -16,7 +16,7 @@ M.config = function()
       prompt_prefix = '   ',
       selection_caret = '  ',
       entry_prefix = '  ',
-      layout_strategy = 'flex',
+      layout_strategy = 'vertical',
       follow = true,
       layout_config = {
         vertical = {
@@ -62,7 +62,7 @@ M.config = function()
       find_files = {
         layout_strategy = 'vertical',
         layout_config = {
-          width = 0.5,
+          width = 0.7,
         },
         previewer = false,
       },

@@ -17,7 +17,6 @@ M.config = function()
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = {
       'c',
-      'comment',
       'cpp',
       'css',
       'go',
@@ -47,7 +46,7 @@ M.config = function()
 
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = { "markdown", "python" },
+      additional_vim_regex_highlighting = { "markdown" },
 
       -- We can disable treesitter highligh on large files
       -- disable = function(lang, buf)
