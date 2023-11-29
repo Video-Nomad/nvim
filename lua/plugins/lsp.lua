@@ -14,12 +14,12 @@ M.config = function()
   -- LSP related keymaps
   map('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
   map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
-  map('n', 'gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition' })
+  map('n', 'gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition', silent = true })
   map('n', 'gI', vim.lsp.buf.implementation, { desc = '[G]oto [I]mplementation' })
   map('n', '<leader>D', vim.lsp.buf.type_definition, { desc = 'Type [D]efinition' })
 
   -- Signature help and hover
-  map('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
+  map('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation', silent = true })
   map({ 'n', 'i', 's' }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
 
   -- Lesser used LSP functionality
