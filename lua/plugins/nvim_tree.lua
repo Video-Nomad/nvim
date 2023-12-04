@@ -13,7 +13,7 @@ M.keys = {
 M.opts = {
   sort_by = "name",
   view = {
-    width = 30,
+    width = 50,
     debounce_delay = 300,
   },
   renderer = {

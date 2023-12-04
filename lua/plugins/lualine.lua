@@ -44,8 +44,8 @@ M.opts = {
     }
   },
   sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { {'branch', icon = '󰘬'}, 'diff', 'diagnostics' },
+    lualine_a = { { 'mode', fmt = function(str) return str:sub(1, 3) end } },
+    lualine_b = { { 'branch', icon = '󰘬' }, 'diff', 'diagnostics' },
     lualine_c = {
       { 'filename', component_separators = { left = "", right = "" } },
       { "%=",       component_separators = { left = "", right = "" } },
