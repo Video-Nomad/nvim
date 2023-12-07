@@ -1,8 +1,10 @@
 -- MAIN SETTINGS
 
--- Disable neovim startup screen
-vim.cmd([[set shortmess+=c]])
-vim.cmd([[set shortmess+=I]])
+-- Disable neovim startup screen and some other messages
+-- vim.cmd([[set shortmess+=c]])
+-- vim.cmd([[set shortmess+=I]])
+vim.opt.shortmess:append("c")
+vim.opt.shortmess:append("I")
 
 -- Remove cmd line when not needed
 vim.o.cmdheight = 0
