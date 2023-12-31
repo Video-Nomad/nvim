@@ -1,8 +1,6 @@
 -- MAIN SETTINGS
 
 -- Disable neovim startup screen and some other messages
--- vim.cmd([[set shortmess+=c]])
--- vim.cmd([[set shortmess+=I]])
 vim.opt.shortmess:append("c")
 vim.opt.shortmess:append("I")
 
@@ -86,8 +84,6 @@ vim.opt.list = true
 vim.o.completeopt = 'menu,menuone,noselect'
 vim.o.pumheight = 11
 
--- Set spelling check highlight group to purple
-vim.api.nvim_set_hl(0, 'SpellBad', { fg = 'purple', bold = true, nocombine = true, undercurl = true })
 -- Set spell checker to support CamelCase
 vim.opt.spelloptions = 'camel,noplainbuffer'
 

@@ -33,6 +33,9 @@ map('i', '<A-j>', '<Esc>jl', { silent = true })
 map('i', '<A-k>', '<Esc>kl', { silent = true })
 map('i', '<A-l>', '<Esc>ll', { silent = true })
 
+-- Split controls
+map('n', '<leader>`', '<C-w>=', { silent = true })
+
 -- Shift+Tab to unindent in insert mode'
 map('i', '<S-Tab>', '<C-d>', { silent = true })
 
