@@ -1,5 +1,7 @@
 local M = { 'Exafunction/codeium.vim' }
 
+M.tag = "1.6.13"
+
 M.cmd = {
   "Codeium",
 }

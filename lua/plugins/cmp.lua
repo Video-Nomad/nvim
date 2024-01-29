@@ -11,7 +11,7 @@ M.dependencies = {
   -- Snippets
   'L3MON4D3/LuaSnip',
   'saadparwaiz1/cmp_luasnip',
-  'rafamadriz/friendly-snippets',
+  -- 'rafamadriz/friendly-snippets',
 
   -- Additional stuff
   'lukas-reineke/cmp-under-comparator',
