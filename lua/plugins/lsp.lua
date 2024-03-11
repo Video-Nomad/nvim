@@ -59,6 +59,7 @@ M.config = function()
     volar = {
     },
     clangd = {
+      -- root_dir = vim.lsp.buf.list_workspace_folders()
     },
     pyright = {
       python = {
@@ -82,6 +83,10 @@ M.config = function()
     jsonls = {
     },
     csharp_ls = {
+    },
+    ruff_lsp = {
+    },
+    tsserver = {
     }
   }
 
@@ -118,7 +123,11 @@ M.config = function()
   }
 
   require('lspconfig')['volar'].setup {
-    filetypes = { 'typescript', 'vue', 'javascript' }
+    filetypes = { 'vue' }
+  }
+
+  require('lspconfig')['tsserver'].setup {
+    filetypes = { "javascriptreact", "javascript.jsx", "typescriptreact", "typescript.tsx" }
   }
 
   -- Show hover popup with a border
@@ -140,10 +149,10 @@ M.config = function()
       severity_sort = true,
       update_in_insert = false,
       signs = {
-        severity_limit = vim.diagnostic.severity.WARN,
+        severity = { min = vim.diagnostic.severity.WARN }
       },
       virtual_text = {
-        severity_limit = vim.diagnostic.severity.WARN,
+        severity = { min = vim.diagnostic.severity.WARN }
       },
     }
   )
