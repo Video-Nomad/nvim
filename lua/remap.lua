@@ -13,7 +13,7 @@ map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Format file or region
 map({ 'v', 'n' }, '<leader>ff', function()
-  vim.lsp.buf.format { async = true }
+  require("conform").format({ lsp_fallback = true })
 end, { desc = "[F]ormat [F]ile or selection" })
 
 -- Diagnostic keymaps

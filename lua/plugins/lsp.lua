@@ -34,7 +34,7 @@ M.config = function()
   local on_attach = function(_, bufnr)
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-      vim.lsp.buf.format({ async = true })
+      require("conform").format({ lsp_fallback = true })
     end, { desc = 'Format current buffer with LSP' })
   end
 
@@ -86,7 +86,9 @@ M.config = function()
     },
     ruff_lsp = {
     },
-    tsserver = {
+    vtsls = {
+    },
+    docker_compose_language_service = {
     }
   }
 
@@ -122,13 +124,17 @@ M.config = function()
     filetypes = { 'html', 'htmldjango' }
   }
 
-  require('lspconfig')['volar'].setup {
-    filetypes = { 'vue' }
+  require('lspconfig')['docker_compose_language_service'].setup {
+    filetypes = { 'yml', 'yaml' },
   }
 
-  require('lspconfig')['tsserver'].setup {
-    filetypes = { "javascriptreact", "javascript.jsx", "typescriptreact", "typescript.tsx" }
+  require('lspconfig')['volar'].setup {
+    filetypes = { 'vue', 'javascript', 'typescript' }
   }
+
+  -- require('lspconfig')['tsserver'].setup {
+  --   filetypes = { "javascriptreact", "javascript.jsx", "typescriptreact", "typescript.tsx" }
+  -- }
 
   -- Show hover popup with a border
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
