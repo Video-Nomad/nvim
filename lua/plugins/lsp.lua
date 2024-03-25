@@ -70,6 +70,11 @@ M.config = function()
       }
     },
     gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
     },
     lua_ls = {
       Lua = {

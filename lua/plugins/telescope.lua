@@ -10,6 +10,7 @@ M.dependencies = {
 
 M.config = function()
   -- Configure Telescope
+  local gs_utils = require("utils")
   require('telescope').setup({
     -- Main Telescope defaults
     defaults = {
@@ -65,6 +66,9 @@ M.config = function()
           width = 0.7,
         },
         previewer = false,
+        path_display = function(_, path)
+          return gs_utils:format_path(path, 99, 80, true)
+        end,
       },
       git_files = {
       },
@@ -79,7 +83,9 @@ M.config = function()
         symbol_width = 0.3,
         symbol_type_width = 0.2,
         layout_strategy = 'flex',
-        path_display = { 'tail' },
+        path_display = function(_, path)
+          return gs_utils:format_path(path, 4, 70, true)
+        end,
         show_line = true,
       },
       current_buffer_fuzzy_find = {

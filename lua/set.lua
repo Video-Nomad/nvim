@@ -4,6 +4,10 @@
 vim.opt.shortmess:append("c")
 vim.opt.shortmess:append("I")
 
+-- Use unix file format by default
+vim.opt.fileformat = "unix"
+vim.opt.fileformats = "unix,dos"
+
 -- Remove cmd line when not needed
 vim.o.cmdheight = 0
 
@@ -77,7 +81,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.wo.signcolumn = 'yes'
 vim.opt.fillchars = { eob = " " }
-vim.opt.listchars = { trail = "∙", extends = "→", tab = "󰌒 " }
+vim.opt.listchars = { trail = "∙", extends = "→", tab = "  " }
 vim.opt.list = true
 
 -- Set completeopt to have a better completion experience
@@ -90,6 +94,6 @@ vim.opt.spelloptions = 'camel,noplainbuffer'
 -- Change diagnostic signs (icons)
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
