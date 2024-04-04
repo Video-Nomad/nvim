@@ -5,7 +5,7 @@ M.priority = 1000
 
 M.opts = {
   style = 'dark',
-  transparent = true,
+  transparent = false,
   term_colors = true,
   ending_tildes = false,
   cmp_itemkind_reverse = false,

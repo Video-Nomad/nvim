@@ -31,10 +31,8 @@ local lazy_opts = {
     notify = false,
   },
 }
--- Load all the plugins from Lazy
 require('lazy').setup('plugins', lazy_opts)
 
--- Color theme
 vim.cmd([[colorscheme onedark]])
 
 -- Load everything else

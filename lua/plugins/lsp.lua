@@ -91,8 +91,6 @@ M.config = function()
     },
     ruff_lsp = {
     },
-    vtsls = {
-    },
     docker_compose_language_service = {
     }
   }
@@ -134,12 +132,13 @@ M.config = function()
   }
 
   require('lspconfig')['volar'].setup {
-    filetypes = { 'vue', 'javascript', 'typescript' }
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+    init_options = {
+      vue = {
+        hybridMode = false,
+      }
+    }
   }
-
-  -- require('lspconfig')['tsserver'].setup {
-  --   filetypes = { "javascriptreact", "javascript.jsx", "typescriptreact", "typescript.tsx" }
-  -- }
 
   -- Show hover popup with a border
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
