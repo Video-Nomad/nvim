@@ -39,12 +39,12 @@ vim.api.nvim_set_hl(0, 'MatchParen', { bg = '#515a6b' })
 -- vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#242424' })
 
 -- Vim Illuminate Highlight groups
--- vim.api.nvim_set_hl(0, 'IlluminatedWordText', { bg = '#34272C', bold = true })
--- vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { bg = '#34272C', bold = true })
--- vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { bg = '#34272C', bold = true })
+vim.api.nvim_set_hl(0, 'IlluminatedWordText', { bold = true })
+vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { bold = true })
+vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { bold = true })
 
 -- Indent Blankline Highlight Color
--- vim.api.nvim_set_hl(0, 'IblIndent', { fg = '#282828', nocombine = true })
+vim.api.nvim_set_hl(0, 'IblIndent', { fg = '#282828', nocombine = true })
 
 -- Barbar Colors
 vim.api.nvim_set_hl(0, 'BufferCurrentERROR', { fg = '#E86671', nocombine = true })

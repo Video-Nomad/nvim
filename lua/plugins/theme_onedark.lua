@@ -4,7 +4,7 @@ M.lazy = false
 M.priority = 1000
 
 M.opts = {
-  style = 'dark',
+  style = 'light',
   transparent = false,
   term_colors = true,
   ending_tildes = false,
@@ -19,7 +19,7 @@ M.opts = {
     variables = 'none'
   },
   lualine = {
-    transparent = false,
+    transparent = true,
   },
   colors = {},
   highlights = {
