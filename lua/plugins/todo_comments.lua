@@ -8,7 +8,7 @@ M.opts = {
   signs = true,
   sign_priority = 8,
   keywords = {
-    FIX  = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+    FIX  = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "CRITICAL" } },
     WIP  = { icon = " ", color = "warning", alt = { "UNFINISHED", "FINISH" } },
     TODO = { icon = " ", color = "info" },
     HACK = { icon = " ", color = "warning" },

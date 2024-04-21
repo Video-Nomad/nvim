@@ -1,6 +1,6 @@
 local utils = {}
 
---Truncate the path based on the elements and overall length
+--Truncate the path based on the elements and overall length (UNUSED)
 ---@param path string input path
 ---@param n number max length of the path (elements)
 ---@param max number max length of the path (symbols)

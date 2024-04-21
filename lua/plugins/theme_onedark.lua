@@ -4,8 +4,8 @@ M.lazy = false
 M.priority = 1000
 
 M.opts = {
-  style = 'light',
-  transparent = false,
+  style = 'dark',
+  transparent = true,
   term_colors = true,
   ending_tildes = false,
   cmp_itemkind_reverse = false,
@@ -19,7 +19,7 @@ M.opts = {
     variables = 'none'
   },
   lualine = {
-    transparent = true,
+    transparent = false,
   },
   colors = {},
   highlights = {

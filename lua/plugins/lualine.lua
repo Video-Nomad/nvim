@@ -25,7 +25,6 @@ end
 M.opts = {
   options = {
     icons_enabled = true,
-    -- theme = 'tokyonight',
     section_separators = '',
     component_separators = '│',
     -- component_separators = { left = '', right = '' },

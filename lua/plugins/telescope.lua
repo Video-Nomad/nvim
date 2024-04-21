@@ -66,9 +66,7 @@ M.config = function()
           width = 0.7,
         },
         previewer = false,
-        path_display = function(_, path)
-          return gs_utils:format_path(path, 99, 80, true)
-        end,
+        path_display = { 'filename_first' },
       },
       git_files = {
       },
@@ -83,9 +81,7 @@ M.config = function()
         symbol_width = 0.3,
         symbol_type_width = 0.2,
         layout_strategy = 'flex',
-        path_display = function(_, path)
-          return gs_utils:format_path(path, 4, 70, true)
-        end,
+        path_display = { 'filename_first' },
         show_line = true,
       },
       current_buffer_fuzzy_find = {
@@ -129,7 +125,7 @@ M.config = function()
   local function todo()
     extensions['todo-comments'].todo({
       keywords =
-      "FIX,FIXME,BUG,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED",
+      "FIX,FIXME,BUG,CRITICAL,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED",
       layout_strategy = 'vertical',
     })
   end
