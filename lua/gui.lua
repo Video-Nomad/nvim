@@ -9,18 +9,18 @@ if vim.g.neovide then
   local font_size = 12
   local font = "JetBrainsMono Nerd Font Mono"
   local map = vim.keymap.set
-  map({ 'i', 'x', 'n', 'c' }, '<C-S-V>', '<C-R>*')
+  map({ "i", "x", "n", "c" }, "<C-S-V>", "<C-R>*")
 
   -- Zoom
-  map({ 'i', 'n' }, '<A-=>', function()
+  map({ "i", "n" }, "<A-=>", function()
     font_size = font_size + 1
     vim.o.guifont = font .. ":h" .. font_size
   end)
-  map({ 'i', 'n' }, '<A-->', function()
+  map({ "i", "n" }, "<A-->", function()
     font_size = font_size - 1
     vim.o.guifont = font .. ":h" .. font_size
   end)
-  map({ 'i', 'n' }, '<A-0>', function()
+  map({ "i", "n" }, "<A-0>", function()
     font_size = 12
     vim.o.guifont = font .. ":h" .. font_size
   end)
@@ -31,7 +31,7 @@ if vim.g.neovide then
     colors = {
       bg0 = "#1E1E1E",
       bg_d = "#1E1E1E",
-    }
+    },
   })
   vim.cmd([[colorscheme onedark]])
 end

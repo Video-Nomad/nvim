@@ -1,4 +1,4 @@
-local M = {'tpope/vim-sleuth'}
+local M = { "tpope/vim-sleuth" }
 
 M.event = "VeryLazy"
 

@@ -1,10 +1,10 @@
-local M = { 'numToStr/Comment.nvim' }
+local M = { "numToStr/Comment.nvim" }
 
 M.keys = {
-  { 'gcc' },
-  { 'gbc' },
-  { 'gc', mode = 'v' },
-  { 'gb', mode = 'v' },
+  { "gcc" },
+  { "gbc" },
+  { "gc", mode = "v" },
+  { "gb", mode = "v" },
 }
 
 M.config = true

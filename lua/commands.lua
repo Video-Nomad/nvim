@@ -33,16 +33,16 @@ vim.cmd([[
 
 -- Disable Tree-sitter highlighting
 function _G.disable_treesitter_highlight()
-  require('nvim-treesitter.configs').setup {
-    highlight = { enable = false, disable = true }
-  }
+  require("nvim-treesitter.configs").setup({
+    highlight = { enable = false, disable = true },
+  })
 end
 
 -- Enable Tree-sitter highlighting
 function _G.enable_treesitter_highlight()
-  require('nvim-treesitter.configs').setup {
-    highlight = { enable = true, disable = false }
-  }
+  require("nvim-treesitter.configs").setup({
+    highlight = { enable = true, disable = false },
+  })
 end
 
 vim.cmd([[

@@ -1,13 +1,13 @@
-local M = { 'RRethy/vim-illuminate' }
+local M = { "RRethy/vim-illuminate" }
 
 M.event = "VeryLazy"
 
 M.config = function()
-  require('illuminate').configure({
+  require("illuminate").configure({
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
-      'lsp',
-      'treesitter',
+      "lsp",
+      "treesitter",
       -- 'regex',
     },
     -- delay: delay in milliseconds
@@ -18,9 +18,9 @@ M.config = function()
     filetype_overrides = {},
     -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
     filetypes_denylist = {
-      'dirvish',
-      'fugitive',
-      'NvimTree',
+      "dirvish",
+      "fugitive",
+      "NvimTree",
     },
     -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
     filetypes_allowlist = {},

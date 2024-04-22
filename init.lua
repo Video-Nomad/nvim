@@ -15,8 +15,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setting a leader key early for Lazy
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Lazy package manager options
 local lazy_opts = {
@@ -24,21 +24,21 @@ local lazy_opts = {
     lazy = true,
   },
   ui = {
-    border = "rounded"
+    border = "rounded",
   },
   change_detection = {
     enabled = true,
     notify = false,
   },
 }
-require('lazy').setup('plugins', lazy_opts)
+require("lazy").setup("plugins", lazy_opts)
 
 vim.cmd([[colorscheme onedark]])
 
 -- Load everything else
-require('set')
-require('remap')
-require('commands')
-require('gui')
-require('highlight')
-require('lang')
+require("set")
+require("remap")
+require("commands")
+require("gui")
+require("highlight")
+require("lang")

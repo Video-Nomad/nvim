@@ -1,9 +1,9 @@
-local M = { 'akinsho/bufferline.nvim' }
+local M = { "akinsho/bufferline.nvim" }
 
 M.version = "*"
 
 M.dependencies = {
-  'nvim-tree/nvim-web-devicons',
+  "nvim-tree/nvim-web-devicons",
 }
 
 M.event = "VeryLazy"
@@ -12,18 +12,18 @@ local icon_map = {
   ["error"] = " ",
   ["warning"] = " ",
   ["info"] = " ",
-  ["hint"] = " "
+  ["hint"] = " ",
 }
 
 M.config = function()
   vim.opt.termguicolors = true
-  local bufferline = require('bufferline')
+  local bufferline = require("bufferline")
   bufferline.setup({
     options = {
       style_preset = bufferline.style_preset.no_italic,
       indicator = {
-        icon = ' ⩺ ', --  ⇨▪■⩔⩺⩔⪧∇⫸∇◯⟫⪧⩒
-        style = 'icon'
+        icon = " ⩺ ", --  ⇨▪■⩔⩺⩔⪧∇⫸∇◯⟫⪧⩒
+        style = "icon",
       },
       right_mouse_command = "bd %d",
       left_mouse_command = "buffer %d",
@@ -41,8 +41,8 @@ M.config = function()
           filetype = "NvimTree",
           text = "Nvim Tree",
           text_align = "left",
-          separator = true
-        }
+          separator = true,
+        },
       },
     },
     highlights = {
@@ -52,27 +52,27 @@ M.config = function()
       indicator_selected = {
         fg = "#d19a66",
       },
-    }
+    },
   })
 
   local map = vim.api.nvim_set_keymap
   local opts = { noremap = true }
 
   -- Move to previous/next
-  map('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', opts)
-  map('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', opts)
+  map("n", "<A-,>", "<Cmd>BufferLineCyclePrev<CR>", opts)
+  map("n", "<A-.>", "<Cmd>BufferLineCycleNext<CR>", opts)
 
   -- Navigate groups
-  map('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', opts)
-  map('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', opts)
+  map("n", "<A-,>", "<Cmd>BufferLineCyclePrev<CR>", opts)
+  map("n", "<A-.>", "<Cmd>BufferLineCycleNext<CR>", opts)
 
   -- Re-order to previous/next
-  map('n', '<A-<>', '<Cmd>BufferLineMovePrev<CR>', opts)
-  map('n', '<A->>', '<Cmd>BufferLineMoveNext<CR>', opts)
+  map("n", "<A-<>", "<Cmd>BufferLineMovePrev<CR>", opts)
+  map("n", "<A->>", "<Cmd>BufferLineMoveNext<CR>", opts)
 
   -- Close buffers
-  map('n', '<leader>bc', '<Cmd>BufferLineCloseOthers<CR>', opts)
-  map('n', '<A-c>', '<Cmd>bd<CR>', opts)
+  map("n", "<leader>bc", "<Cmd>BufferLineCloseOthers<CR>", opts)
+  map("n", "<A-c>", "<Cmd>bd<CR>", opts)
 end
 
 return M

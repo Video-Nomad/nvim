@@ -1,8 +1,8 @@
-local M = { 'Wansmer/treesj' }
+local M = { "Wansmer/treesj" }
 
-M.dependencies = { 'nvim-treesitter/nvim-treesitter' }
+M.dependencies = { "nvim-treesitter/nvim-treesitter" }
 
-M.keys = { '<leader>m', '<leader>j', '<leader>s' }
+M.keys = { "<leader>m", "<leader>j", "<leader>s" }
 
 M.opts = {
   -- Use default keymaps
@@ -17,11 +17,10 @@ M.opts = {
   -- hold - cursor follows the node/place on which it was called
   -- start - cursor jumps to the first symbol of the node being formatted
   -- end - cursor jumps to the last symbol of the node being formatted
-  cursor_behavior = 'hold',
+  cursor_behavior = "hold",
   -- Notify about possible problems or not
   notify = true,
-  langs = {
-  },
+  langs = {},
   -- Use `dot` for repeat action
   dot_repeat = true,
 }

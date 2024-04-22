@@ -1,4 +1,4 @@
-local M = { 'williamboman/mason.nvim' }
+local M = { "williamboman/mason.nvim" }
 
 M.cmd = {
   "Mason",
@@ -10,13 +10,13 @@ M.cmd = {
 }
 
 M.dependencies = {
-  'williamboman/mason-lspconfig.nvim'
+  "williamboman/mason-lspconfig.nvim",
 }
 
 M.opts = {
   ui = {
-    border = "rounded"
-  }
+    border = "rounded",
+  },
 }
 
 return M

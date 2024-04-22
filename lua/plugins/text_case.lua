@@ -1,12 +1,12 @@
-local M = { 'johmsalas/text-case.nvim' }
+local M = { "johmsalas/text-case.nvim" }
 
 M.keys = {
-  { '<leader>tc' },
+  { "<leader>tc" },
 }
 
 M.config = function()
-  vim.keymap.set('n', '<leader>tc', function()
-    require('textcase').open_telescope()
+  vim.keymap.set("n", "<leader>tc", function()
+    require("textcase").open_telescope()
   end, { desc = "Toggle Text Case" })
 end
 

@@ -1,15 +1,15 @@
-local M = { 'folke/todo-comments.nvim' }
+local M = { "folke/todo-comments.nvim" }
 
 M.event = "VeryLazy"
 
-M.keys = { { '<leader>wt' }, { '<leader>wn' } }
+M.keys = { { "<leader>wt" }, { "<leader>wn" } }
 
 M.opts = {
   signs = true,
   sign_priority = 8,
   keywords = {
-    FIX  = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "CRITICAL" } },
-    WIP  = { icon = " ", color = "warning", alt = { "UNFINISHED", "FINISH" } },
+    FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "CRITICAL" } },
+    WIP = { icon = " ", color = "warning", alt = { "UNFINISHED", "FINISH" } },
     TODO = { icon = " ", color = "info" },
     HACK = { icon = " ", color = "warning" },
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
@@ -35,12 +35,12 @@ M.opts = {
     exclude = {},
   },
   colors = {
-    error   = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+    error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
     warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-    info    = { "DiagnosticInfo", "#2563EB" },
-    hint    = { "DiagnosticHint", "#10B981" },
+    info = { "DiagnosticInfo", "#2563EB" },
+    hint = { "DiagnosticHint", "#10B981" },
     default = { "Identifier", "#7C3AED" },
-    test    = { "Identifier", "#FF00FF" }
+    test = { "Identifier", "#FF00FF" },
   },
   search = {
     command = "rg",

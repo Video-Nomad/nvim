@@ -1,5 +1,5 @@
-local M = { 'tpope/vim-fugitive' }
+local M = { "tpope/vim-fugitive" }
 
-M.cmd = {"Git"}
+M.cmd = { "Git" }
 
 return M

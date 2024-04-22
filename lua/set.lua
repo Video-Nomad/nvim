@@ -15,12 +15,12 @@ vim.o.cmdheight = 0
 vim.o.title = true
 
 -- Use pwsh as default shell
-vim.o.shell = 'pwsh'
-vim.o.shellxquote = ''
-vim.o.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
-vim.o.shellquote = ''
-vim.o.shellpipe = '| Out-File -Encoding utf8 %s'
-vim.o.shellredir = '| Out-File -Encoding utf88 %s'
+vim.o.shell = "pwsh"
+vim.o.shellxquote = ""
+vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command "
+vim.o.shellquote = ""
+vim.o.shellpipe = "| Out-File -Encoding utf8 %s"
+vim.o.shellredir = "| Out-File -Encoding utf88 %s"
 
 -- Set colors and cursor
 vim.o.termguicolors = true
@@ -48,7 +48,7 @@ vim.wo.number = true
 vim.wo.rnu = true
 
 -- Enable mouse mode and remove annoying lines
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 vim.cmd([[
 silent! aunmenu PopUp.How-to\ disable\ mouse
 silent! aunmenu PopUp.-1-
@@ -57,7 +57,7 @@ silent! aunmenu PopUp.-1-
 -- Enable break indent
 vim.o.breakindent = true
 vim.o.linebreak = true
-vim.o.showbreak = '   ↪'
+vim.o.showbreak = "   ↪"
 -- vim.opt.display = 'lastline'
 vim.o.wrap = false
 
@@ -79,17 +79,17 @@ vim.o.ttimeoutlen = 0
 -- Some other stuff
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
 vim.opt.listchars = { trail = "∙", extends = "→", tab = "  " }
 vim.opt.list = true
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menu,menuone,noselect'
+vim.o.completeopt = "menu,menuone,noselect"
 vim.o.pumheight = 11
 
 -- Set spell checker to support CamelCase
-vim.opt.spelloptions = 'camel,noplainbuffer'
+vim.opt.spelloptions = "camel,noplainbuffer"
 
 -- Change diagnostic signs (icons)
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }

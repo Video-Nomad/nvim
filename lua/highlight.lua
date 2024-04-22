@@ -1,18 +1,22 @@
 -- ALL THE HIGHLIGHT GROUPS
 
 -- Highlight on Yank
-local yank_autogroup = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+local yank_autogroup = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 local illuminate = require("illuminate.engine") -- Check if we have illuminate
-vim.api.nvim_create_autocmd('TextYankPost', {
+vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    if illuminate then illuminate.pause() end
+    if illuminate then
+      illuminate.pause()
+    end
     vim.highlight.on_yank({
-      higroup = "YankColor"
+      higroup = "YankColor",
     })
-    if illuminate then illuminate.resume() end
+    if illuminate then
+      illuminate.resume()
+    end
   end,
   group = yank_autogroup,
-  pattern = '*',
+  pattern = "*",
 })
 
 -- Blinking Cursor
@@ -23,32 +27,32 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- ]])
 
 -- Floating window colors
-vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 
 -- Signature help
-vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { fg = '#98C379' })
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { fg = "#98C379" })
 
 -- Yank color
-vim.api.nvim_set_hl(0, 'YankColor', { bg = '#7E6A43' })
+vim.api.nvim_set_hl(0, "YankColor", { bg = "#7E6A43" })
 
 -- Matching parenthesis highlight
-vim.api.nvim_set_hl(0, 'MatchParen', { bg = '#515a6b' })
+vim.api.nvim_set_hl(0, "MatchParen", { bg = "#515a6b" })
 
 -- Cursor Line
 -- vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#242424' })
 
 -- Vim Illuminate Highlight groups
-vim.api.nvim_set_hl(0, 'IlluminatedWordText', { bold = true })
-vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { bold = true })
-vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { bold = true })
+vim.api.nvim_set_hl(0, "IlluminatedWordText", { bold = true })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bold = true })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bold = true })
 
 -- Indent Blankline Highlight Color
-vim.api.nvim_set_hl(0, 'IblIndent', { fg = '#282828', nocombine = true })
+vim.api.nvim_set_hl(0, "IblIndent", { fg = "#282828", nocombine = true })
 
 -- Barbar Colors
-vim.api.nvim_set_hl(0, 'BufferCurrentERROR', { fg = '#E86671', nocombine = true })
-vim.api.nvim_set_hl(0, 'BufferCurrentWARN', { fg = '#E5C07B', nocombine = true })
+vim.api.nvim_set_hl(0, "BufferCurrentERROR", { fg = "#E86671", nocombine = true })
+vim.api.nvim_set_hl(0, "BufferCurrentWARN", { fg = "#E5C07B", nocombine = true })
 
 -- Set spelling check highlight group to purple
-vim.api.nvim_set_hl(0, 'SpellBad', { fg = 'purple', bold = true, nocombine = true, undercurl = true })
+vim.api.nvim_set_hl(0, "SpellBad", { fg = "purple", bold = true, nocombine = true, undercurl = true })

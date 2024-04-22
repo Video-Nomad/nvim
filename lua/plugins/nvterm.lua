@@ -1,14 +1,14 @@
-local M = { 'NvChad/nvterm' }
+local M = { "NvChad/nvterm" }
 
 M.keys = {
   {
-    '<A-s>',
+    "<A-s>",
     function()
-      require("nvterm.terminal").toggle "horizontal"
+      require("nvterm.terminal").toggle("horizontal")
     end,
     desc = "Toggle floating terminal window",
-    mode = { 'n', 't' }
-  }
+    mode = { "n", "t" },
+  },
 }
 
 M.opts = {

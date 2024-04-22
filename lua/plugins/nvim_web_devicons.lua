@@ -1,9 +1,9 @@
-local M = { 'nvim-tree/nvim-web-devicons' }
+local M = { "nvim-tree/nvim-web-devicons" }
 
 M.event = "VeryLazy"
 
 M.config = function()
-  require('nvim-web-devicons').setup({
+  require("nvim-web-devicons").setup({
     -- globally enable different highlight colors per icon (default to true)
     -- if set to false all icons will have the default icon's color
     color_icons = true,
@@ -21,8 +21,8 @@ M.config = function()
       [".gitignore"] = {
         icon = "",
         color = "#f1502f",
-        name = "Gitignore"
-      }
+        name = "Gitignore",
+      },
     },
     -- same as `override` but specifically for overrides by extension
     -- takes effect when `strict` is true
@@ -30,8 +30,8 @@ M.config = function()
       ["log"] = {
         icon = "",
         color = "#81e043",
-        name = "Log"
-      }
+        name = "Log",
+      },
     },
   })
 end

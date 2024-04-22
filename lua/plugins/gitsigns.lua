@@ -1,10 +1,10 @@
-local M = { 'lewis6991/gitsigns.nvim' }
+local M = { "lewis6991/gitsigns.nvim" }
 
 -- M.event = "VeryLazy"
 M.lazy = false
 
 M.config = function()
-  require('gitsigns').setup {
+  require("gitsigns").setup({
     signs = {
       -- add = { text = '+' },
       -- change = { text = '~' },
@@ -22,16 +22,24 @@ M.config = function()
       end
 
       -- Navigation
-      map('n', ']c', function()
-        if vim.wo.diff then return ']c' end
-        vim.schedule(function() gs.next_hunk() end)
-        return '<Ignore>'
+      map("n", "]c", function()
+        if vim.wo.diff then
+          return "]c"
+        end
+        vim.schedule(function()
+          gs.next_hunk()
+        end)
+        return "<Ignore>"
       end, { expr = true })
 
-      map('n', '[c', function()
-        if vim.wo.diff then return '[c' end
-        vim.schedule(function() gs.prev_hunk() end)
-        return '<Ignore>'
+      map("n", "[c", function()
+        if vim.wo.diff then
+          return "[c"
+        end
+        vim.schedule(function()
+          gs.prev_hunk()
+        end)
+        return "<Ignore>"
       end, { expr = true })
 
       -- Actions
@@ -40,17 +48,17 @@ M.config = function()
       -- map('n', '<leader>hS', gs.stage_buffer)
       -- map('n', '<leader>hu', gs.undo_stage_hunk)
       -- map('n', '<leader>hR', gs.reset_buffer)
-      map('n', '<leader>=', gs.preview_hunk)
+      map("n", "<leader>=", gs.preview_hunk)
       -- map('n', '<leader>hb', function() gs.blame_line{full=true} end)
       -- map('n', '<leader>tb', gs.toggle_current_line_blame)
-      map('n', '<leader>+', gs.diffthis)
+      map("n", "<leader>+", gs.diffthis)
       -- map('n', '<leader>hD', function() gs.diffthis('~') end)
       -- map('n', '<leader>td', gs.toggle_deleted)
 
       -- Text object
-      map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-    end
-  }
+      map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+    end,
+  })
 end
 
 return M

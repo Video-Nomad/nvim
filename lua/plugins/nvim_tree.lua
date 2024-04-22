@@ -1,13 +1,13 @@
-local M = { 'nvim-tree/nvim-tree.lua' }
+local M = { "nvim-tree/nvim-tree.lua" }
 
 M.dependencies = {
-  'nvim-tree/nvim-web-devicons'
+  "nvim-tree/nvim-web-devicons",
 }
 
 M.cmd = "NvimTreeToggle"
 
 M.keys = {
-  { '<A-e>', vim.cmd.NvimTreeToggle, desc = "Nvim Tree", mode = 'n' },
+  { "<A-e>", vim.cmd.NvimTreeToggle, desc = "Nvim Tree", mode = "n" },
 }
 
 M.opts = {
@@ -39,8 +39,8 @@ M.opts = {
     ignore_dirs = { "./target/debug/", "./target/release/", "./.git/", "./git/" },
   },
   git = {
-    ignore = false
-  }
+    ignore = false,
+  },
 }
 
 return M

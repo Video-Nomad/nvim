@@ -12,7 +12,9 @@ M.opts = {
     max_height = 25,
     default_detail = 1,
     bindings = {
-      ["q"] = function() vim.cmd("OverseerClose") end,
+      ["q"] = function()
+        vim.cmd("OverseerClose")
+      end,
     },
   },
 }
