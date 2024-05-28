@@ -7,6 +7,7 @@ M.dependencies = {
   "arkav/lualine-lsp-progress",
 }
 
+-- LSP progress spinner
 local function lsp_progress()
   return {
     "lsp_progress",

@@ -8,7 +8,7 @@ end
 
 M.dependencies = {
   "nvim-treesitter/nvim-treesitter-textobjects",
-  "nvim-treesitter/playground",
+  -- "nvim-treesitter/playground",
 }
 
 M.config = function()

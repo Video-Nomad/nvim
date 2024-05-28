@@ -115,7 +115,7 @@ M.config = function()
     end,
   })
 
-  -- Some custom stuff for html to attach to htmldjango
+  -- Some custom options for certain LSPs
   require("lspconfig")["html"].setup({
     filetypes = { "html", "htmldjango" },
   })
