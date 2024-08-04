@@ -50,8 +50,8 @@ vim.wo.rnu = true
 -- Enable mouse mode and remove annoying lines
 vim.o.mouse = "a"
 vim.cmd([[
-silent! aunmenu PopUp.How-to\ disable\ mouse
-silent! aunmenu PopUp.-1-
+  silent! aunmenu PopUp.How-to\ disable\ mouse
+  silent! aunmenu PopUp.-1-
 ]])
 
 -- Enable break indent
@@ -97,3 +97,10 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+-- Add rounded corners to diagnostic window popup
+vim.diagnostic.config({
+  float = {
+    border = "rounded" -- This sets the border to rounded
+  }
+})

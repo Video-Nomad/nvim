@@ -4,6 +4,8 @@ vim.g.codeium_disable_bindings = 1
 vim.g.codeium_manual = false
 vim.g.codeium_idle_delay = 100
 
+M.commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2"
+
 M.cmd = {
   "Codeium",
   "CodeiumAuto",

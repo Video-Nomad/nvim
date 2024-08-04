@@ -13,7 +13,7 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Format file or region
 map({ "v", "n" }, "<leader>ff", function()
-  require("conform").format({ lsp_fallback = true })
+  require("conform").format({ lsp_format = "fallback" })
 end, { desc = "[F]ormat [F]ile or selection" })
 
 -- Diagnostic keymaps
@@ -25,6 +25,9 @@ map("n", "<leader>e", vim.diagnostic.open_float)
 -- Allows to move highlited code
 map("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+
+-- Close buffer
+map("n", "<leader>q", "<cmd>bd<CR>", { silent = true })
 
 -- Keep visual selection when indenting and dedenting
 map("v", "<", "<gv^", { silent = true })
@@ -50,7 +53,7 @@ map("n", "<A-p>", "<cmd>cp<CR>", { silent = true })
 map("n", "J", "mzJ`z", { silent = true })
 
 -- Toggle wrapping
-map("n", "<A-z>", ":set wrap!<CR>", { silent = true })
+map("n", "<A-w>", ":set wrap!<CR>", { silent = true, noremap = true })
 
 -- Keep cursor in the middle when jumping half a screen
 map("n", "<C-d>", "<C-d>zz", { silent = true })

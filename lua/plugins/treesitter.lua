@@ -56,7 +56,7 @@ M.config = function()
     },
     indent = {
       enable = true,
-      disable = { "python" }, -- TODO: Do we want to disable this?
+      -- disable = { "python" }, -- TODO: Do we want to disable this?
     },
     incremental_selection = {
       enable = true,
