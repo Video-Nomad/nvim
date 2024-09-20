@@ -47,4 +47,8 @@ end
 -- Create Align command
 vim.api.nvim_create_user_command("Align", function(opts)
   align_section(opts.line1, opts.line2, opts.args)
-end, { range = true, nargs = "?" })
+end, {
+  range = true,
+  nargs = "?",
+  desc = "Align current line or selection on \"=\" sign or custom string if provided",
+})
