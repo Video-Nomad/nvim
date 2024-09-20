@@ -7,7 +7,7 @@ M.dependencies = {
 M.cmd = "NvimTreeToggle"
 
 M.keys = {
-  { "<A-e>", vim.cmd.NvimTreeToggle, desc = "Nvim Tree", mode = "n" },
+  { "<A-e>",      vim.cmd.NvimTreeToggle,  desc = "Nvim Tree",                mode = "n" },
 }
 
 M.opts = {

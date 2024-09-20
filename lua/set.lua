@@ -1,5 +1,11 @@
 -- MAIN SETTINGS
 
+-- Spelling
+vim.opt.spelllang = 'en_us'
+
+-- Set spell checker to support CamelCase
+vim.opt.spelloptions = "camel,noplainbuffer"
+
 -- Disable neovim startup screen and some other messages
 vim.opt.shortmess:append("c")
 vim.opt.shortmess:append("I")
@@ -87,9 +93,6 @@ vim.opt.list = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.pumheight = 11
-
--- Set spell checker to support CamelCase
-vim.opt.spelloptions = "camel,noplainbuffer"
 
 -- Change diagnostic signs (icons)
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }

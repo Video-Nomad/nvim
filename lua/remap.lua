@@ -26,8 +26,42 @@ map("n", "<leader>e", vim.diagnostic.open_float)
 map("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
--- Close buffer
-map("n", "<leader>q", "<cmd>bd<CR>", { silent = true })
+---- Resize splits
+-- Increase width of current split when it's on the right
+vim.keymap.set('n', '<A-Left>', function()
+  if vim.fn.winnr() == vim.fn.winnr('l') then
+    return '5<C-W>>'
+  else
+    return '5<C-W><'
+  end
+end, { expr = true, silent = true })
+
+-- Decrease width of current split when it's on the right
+vim.keymap.set('n', '<A-Right>', function()
+  if vim.fn.winnr() == vim.fn.winnr('l') then
+    return '5<C-W><'
+  else
+    return '5<C-W>>'
+  end
+end, { expr = true, silent = true })
+
+-- Increase height of current split when it's on the bottom
+vim.keymap.set('n', '<A-Up>', function()
+  if vim.fn.winnr() == vim.fn.winnr('j') then
+    return '<C-W>+'
+  else
+    return '<C-W>-'
+  end
+end, { expr = true, silent = true })
+
+-- Decrease height of current split when it's on the bottom
+vim.keymap.set('n', '<A-Down>', function()
+  if vim.fn.winnr() == vim.fn.winnr('j') then
+    return '<C-W>-'
+  else
+    return '<C-W>+'
+  end
+end, { expr = true, silent = true })
 
 -- Keep visual selection when indenting and dedenting
 map("v", "<", "<gv^", { silent = true })
@@ -70,7 +104,7 @@ map("x", "p", [["_dP]])
 map({ "n", "v" }, "d", [["_d]], { silent = true })
 
 -- Repalce macro key for visual block
-map({ "n", "v" }, "q", "<c-v>", { silent = true })
+-- map({ "n", "v" }, "q", "<c-v>", { silent = true })
 
 -- There's a reason this is mapped to "nop(e)"
 map("n", "Q", "<nop>", { silent = true })

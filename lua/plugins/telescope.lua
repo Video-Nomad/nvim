@@ -129,7 +129,8 @@ M.config = function()
   end
   local function todo()
     extensions["todo-comments"].todo({
-      keywords = "FIX,FIXME,BUG,CRITICAL,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED",
+      keywords =
+      "FIX,FIXME,BUG,CRITICAL,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED",
       layout_strategy = "vertical",
     })
   end
@@ -137,7 +138,9 @@ M.config = function()
   map("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
   map("n", "<leader><space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
   map("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-  map("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+  map("n", "<leader>sg", function()
+    builtin.live_grep({ additional_args = { "--pcre2" } })
+  end, { desc = "[S]earch by [G]rep" })
   -- map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' }) -- Delegated to Trouble (for now)
   map("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
   map("n", "<leader>sG", builtin.git_files, { desc = "[S]earch [Git] files" })

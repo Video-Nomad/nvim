@@ -20,7 +20,7 @@ M.config = function()
 
   -- Signature help and hover
   map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-  map({ "n", "i", "s" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Documentation" })
+  map({ "n", "i", "s" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Documentation", silent = true })
 
   -- Lesser used LSP functionality
   map("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })

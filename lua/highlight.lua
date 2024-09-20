@@ -55,4 +55,4 @@ vim.api.nvim_set_hl(0, "BufferCurrentERROR", { fg = "#E86671", nocombine = true 
 vim.api.nvim_set_hl(0, "BufferCurrentWARN", { fg = "#E5C07B", nocombine = true })
 
 -- Set spelling check highlight group to purple
-vim.api.nvim_set_hl(0, "SpellBad", { fg = "purple", bold = true, nocombine = true, undercurl = true })
+vim.api.nvim_set_hl(0, "SpellBad", { sp = "orange", nocombine = true, undercurl = true })

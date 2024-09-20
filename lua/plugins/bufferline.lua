@@ -1,6 +1,6 @@
 local M = { "akinsho/bufferline.nvim" }
 
--- M.version = "*"
+M.version = "*"
 
 M.dependencies = {
   "nvim-tree/nvim-web-devicons",
@@ -22,7 +22,7 @@ M.config = function()
     options = {
       style_preset = bufferline.style_preset.no_italic,
       indicator = {
-        icon = " ⩺ ", --  ⇨▪■⩔⩺⩔⪧∇⫸∇◯⟫⪧⩒
+        icon = "  ", --  ⇨▪■⩔⩺⩔⪧∇⫸∇◯⟫⪧⩒
         style = "icon",
       },
       right_mouse_command = "bd %d",
