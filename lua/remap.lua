@@ -103,8 +103,11 @@ map("x", "p", [["_dP]])
 -- Delete into void register. If we want to copy - just use "c" instead
 map({ "n", "v" }, "d", [["_d]], { silent = true })
 
+-- Change the macro key
+map({ "n" }, "<leader>r", "q", { silent = true, noremap = true })
+
 -- Repalce macro key for visual block
--- map({ "n", "v" }, "q", "<c-v>", { silent = true })
+map({ "n", "v" }, "q", "<C-v>", { silent = true, noremap = true })
 
 -- There's a reason this is mapped to "nop(e)"
 map("n", "Q", "<nop>", { silent = true })

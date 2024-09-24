@@ -23,6 +23,7 @@ local function lsp_progress()
 end
 
 M.config = function()
+  local utils = require("utils")
   local c = require('onedark.colors')
   require("lualine.themes.onedark")
   local colors = {
@@ -84,6 +85,7 @@ M.config = function()
         { "filename", component_separators = { left = "", right = "" }, file_status = true, path = 1 },
         { "%=",       component_separators = { left = "", right = "" } },
         lsp_progress(),
+        utils.macro_recording
       },
       lualine_x = { "encoding", "fileformat", "filetype" },
       lualine_y = { "progress" },
