@@ -24,7 +24,7 @@ end
 
 M.config = function()
   local utils = require("utils")
-  local c = require('onedark.colors')
+  local c = require("onedark.colors")
   require("lualine.themes.onedark")
   local colors = {
     bg = c.bg0,
@@ -35,31 +35,31 @@ M.config = function()
     blue = c.blue,
     purple = c.purple,
     cyan = c.cyan,
-    gray = c.grey
+    gray = c.grey,
   }
   local one_dark = {
     inactive = {
-      a = { fg = colors.green, bg = "#1d242f", gui = 'bold' },
+      a = { fg = colors.green, bg = "#1d242f", gui = "bold" },
       b = { fg = colors.green, bg = "#1d242f" },
       c = { fg = colors.green, bg = "#1d242f" },
     },
     normal = {
-      a = { fg = colors.green, bg = c.none, gui = 'bold' },
+      a = { fg = colors.green, bg = c.none, gui = "bold" },
       b = { fg = colors.fg, bg = c.none },
       c = { fg = colors.fg, bg = c.none },
     },
-    visual = { a = { fg = colors.purple, bg = c.none, gui = 'bold' }, },
-    replace = { a = { fg = colors.red, bg = c.none, gui = 'bold' }, },
-    insert = { a = { fg = colors.blue, bg = c.none, gui = 'bold' }, },
-    command = { a = { fg = colors.yellow, bg = c.none, gui = 'bold' }, },
-    terminal = { a = { fg = colors.cyan, bg = c.none, gui = 'bold' }, },
+    visual = { a = { fg = colors.purple, bg = c.none, gui = "bold" } },
+    replace = { a = { fg = colors.red, bg = c.none, gui = "bold" } },
+    insert = { a = { fg = colors.blue, bg = c.none, gui = "bold" } },
+    command = { a = { fg = colors.yellow, bg = c.none, gui = "bold" } },
+    terminal = { a = { fg = colors.cyan, bg = c.none, gui = "bold" } },
   }
-  require("lualine").setup {
+  require("lualine").setup({
     options = {
       icons_enabled = true,
       theme = one_dark,
-      component_separators = { left = '', right = '' },
-      section_separators = { left = '', right = '' },
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       disabled_filetypes = {
         statusline = {},
         winbar = {},
@@ -74,18 +74,25 @@ M.config = function()
       },
     },
     sections = {
-      lualine_a = { {
-        "mode",
-        fmt = function(str)
-          return str:sub(1, 3)
-        end,
-      } },
+      lualine_a = {
+        {
+          "mode",
+          fmt = function(str)
+            return str:sub(1, 3)
+          end,
+        },
+      },
       lualine_b = { { "branch", icon = "󰘬" }, "diff", "diagnostics" },
       lualine_c = {
-        { "filename", component_separators = { left = "", right = "" }, file_status = true, path = 1 },
-        { "%=",       component_separators = { left = "", right = "" } },
+        {
+          "filename",
+          component_separators = { left = "", right = "" },
+          file_status = true,
+          path = 1,
+        },
+        { "%=", component_separators = { left = "", right = "" } },
         lsp_progress(),
-        utils.macro_recording
+        utils.macro_recording,
       },
       lualine_x = { "encoding", "fileformat", "filetype" },
       lualine_y = { "progress" },
@@ -103,7 +110,7 @@ M.config = function()
     winbar = {},
     inactive_winbar = {},
     extensions = {},
-  }
+  })
 end
 
 return M

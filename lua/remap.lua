@@ -1,3 +1,4 @@
+local utils = require("utils")
 -- BASIC KEYMAPS
 local map = vim.keymap.set
 
@@ -26,42 +27,66 @@ map("n", "<leader>e", vim.diagnostic.open_float)
 map("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
----- Resize splits
+-- Resize splits ------------------------------------------
 -- Increase width of current split when it's on the right
-vim.keymap.set('n', '<A-Left>', function()
-  if vim.fn.winnr() == vim.fn.winnr('l') then
-    return '5<C-W>>'
+vim.keymap.set("n", "<A-Left>", function()
+  if vim.fn.winnr() == vim.fn.winnr("l") then
+    return "5<C-W>>"
   else
-    return '5<C-W><'
+    return "5<C-W><"
   end
 end, { expr = true, silent = true })
 
 -- Decrease width of current split when it's on the right
-vim.keymap.set('n', '<A-Right>', function()
-  if vim.fn.winnr() == vim.fn.winnr('l') then
-    return '5<C-W><'
+vim.keymap.set("n", "<A-Right>", function()
+  if vim.fn.winnr() == vim.fn.winnr("l") then
+    return "5<C-W><"
   else
-    return '5<C-W>>'
+    return "5<C-W>>"
   end
 end, { expr = true, silent = true })
 
 -- Increase height of current split when it's on the bottom
-vim.keymap.set('n', '<A-Up>', function()
-  if vim.fn.winnr() == vim.fn.winnr('j') then
-    return '<C-W>+'
+vim.keymap.set("n", "<A-Up>", function()
+  if vim.fn.winnr() == vim.fn.winnr("j") then
+    return "<C-W>+"
   else
-    return '<C-W>-'
+    return "<C-W>-"
   end
 end, { expr = true, silent = true })
 
 -- Decrease height of current split when it's on the bottom
-vim.keymap.set('n', '<A-Down>', function()
-  if vim.fn.winnr() == vim.fn.winnr('j') then
-    return '<C-W>-'
+vim.keymap.set("n", "<A-Down>", function()
+  if vim.fn.winnr() == vim.fn.winnr("j") then
+    return "<C-W>-"
   else
-    return '<C-W>+'
+    return "<C-W>+"
   end
 end, { expr = true, silent = true })
+-----------------------------------------------------------
+
+-- Move between splits
+map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+map("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
+map("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+
+-- Move splits
+map("n", "<S-A-h>", function()
+  utils:swap_windows("h")
+end, { noremap = true, silent = true })
+
+map("n", "<S-A-l>", function()
+  utils:swap_windows("l")
+end, { noremap = true, silent = true })
+
+map("n", "<S-A-j>", function()
+  utils:swap_windows("j")
+end, { noremap = true, silent = true })
+
+map("n", "<S-A-k>", function()
+  utils:swap_windows("k")
+end, { noremap = true, silent = true })
 
 -- Keep visual selection when indenting and dedenting
 map("v", "<", "<gv^", { silent = true })

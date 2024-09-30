@@ -4,7 +4,7 @@ M.event = "VeryLazy"
 
 M.config = function()
   require("lsp_signature").setup({
-    hint_prefix = "😸 "
+    hint_prefix = "😸 ",
   })
 end
 

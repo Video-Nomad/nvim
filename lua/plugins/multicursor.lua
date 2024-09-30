@@ -10,14 +10,22 @@ M.config = function()
   mc.setup()
 
   -- Add cursors above/below the main cursor.
-  vim.keymap.set({ "n", "v" }, "<c-up>", function() mc.addCursor("k") end)
-  vim.keymap.set({ "n", "v" }, "<c-down>", function() mc.addCursor("j") end)
+  vim.keymap.set({ "n", "v" }, "<c-up>", function()
+    mc.addCursor("k")
+  end)
+  vim.keymap.set({ "n", "v" }, "<c-down>", function()
+    mc.addCursor("j")
+  end)
 
   -- Add a cursor and jump to the next word under cursor.
-  vim.keymap.set({ "n", "v" }, "<c-n>", function() mc.addCursor("*") end)
+  vim.keymap.set({ "n", "v" }, "<c-n>", function()
+    mc.addCursor("*")
+  end)
 
   -- Jump to the next word under cursor but do not add a cursor.
-  vim.keymap.set({ "n", "v" }, "<c-s>", function() mc.skipCursor("*") end)
+  vim.keymap.set({ "n", "v" }, "<c-s>", function()
+    mc.skipCursor("*")
+  end)
 
   -- Rotate the main cursor.
   vim.keymap.set({ "n", "v" }, "<c-left>", mc.nextCursor)
@@ -63,8 +71,12 @@ M.config = function()
   vim.keymap.set("v", "M", mc.matchCursors)
 
   -- Rotate visual selection contents.
-  vim.keymap.set("v", "<leader>t", function() mc.transposeCursors(1) end)
-  vim.keymap.set("v", "<leader>T", function() mc.transposeCursors(-1) end)
+  vim.keymap.set("v", "<leader>t", function()
+    mc.transposeCursors(1)
+  end)
+  vim.keymap.set("v", "<leader>T", function()
+    mc.transposeCursors(-1)
+  end)
 
   -- Customize how cursors look.
   vim.api.nvim_set_hl(0, "MultiCursorCursor", { link = "Cursor" })

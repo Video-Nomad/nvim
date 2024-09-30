@@ -20,12 +20,22 @@ M.config = function()
 
   -- Signature help and hover
   map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-  map({ "n", "i", "s" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Documentation", silent = true })
+  map(
+    { "n", "i", "s" },
+    "<C-k>",
+    vim.lsp.buf.signature_help,
+    { desc = "Signature Documentation", silent = true }
+  )
 
   -- Lesser used LSP functionality
   map("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "[W]orkspace [A]dd Folder" })
-  map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "[W]orkspace [R]emove Folder" })
+  map(
+    "n",
+    "<leader>wr",
+    vim.lsp.buf.remove_workspace_folder,
+    { desc = "[W]orkspace [R]emove Folder" }
+  )
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, { desc = "[W]orkspace [L]ist Folders" })
@@ -144,17 +154,18 @@ M.config = function()
   })
 
   -- Configure the lsp diagnostics visualisation
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    severity_sort = true,
-    update_in_insert = false,
-    signs = {
-      severity = { min = vim.diagnostic.severity.WARN },
-    },
-    virtual_text = {
-      severity = { min = vim.diagnostic.severity.WARN },
-    },
-  })
+  vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      underline = true,
+      severity_sort = true,
+      update_in_insert = false,
+      signs = {
+        severity = { min = vim.diagnostic.severity.WARN },
+      },
+      virtual_text = {
+        severity = { min = vim.diagnostic.severity.WARN },
+      },
+    })
 
   -- Set rounded borders for LspInfo window
   require("lspconfig.ui.windows").default_options.border = "rounded"

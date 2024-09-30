@@ -33,17 +33,17 @@ function utils:format_path(path, n, max, show_file_name)
 end
 
 -- Macro indicator for lualine
-local macro_state = ''
+local macro_state = ""
 local timer = nil
 local refresh_interval = 1000 -- milliseconds
 
 local function update_macro_state()
   local recording_register = vim.fn.reg_recording()
-  if recording_register ~= '' then
-    macro_state = 'Rec  @' .. recording_register
+  if recording_register ~= "" then
+    macro_state = "Rec  @" .. recording_register
     refresh_interval = 100
   else
-    macro_state = ''
+    macro_state = ""
     refresh_interval = 500
   end
 
@@ -57,6 +57,22 @@ function utils:macro_recording()
     timer = vim.defer_fn(update_macro_state, 0)
   end
   return macro_state
+end
+
+function utils:swap_windows(direction)
+  local current_win = vim.api.nvim_get_current_win()
+  vim.cmd("wincmd " .. direction)
+  local target_win = vim.api.nvim_get_current_win()
+
+  if current_win ~= target_win then
+    local current_buf = vim.api.nvim_win_get_buf(current_win)
+    local target_buf = vim.api.nvim_win_get_buf(target_win)
+
+    vim.api.nvim_win_set_buf(current_win, target_buf)
+    vim.api.nvim_win_set_buf(target_win, current_buf)
+
+    vim.api.nvim_set_current_win(target_win)
+  end
 end
 
 return utils

@@ -61,8 +61,8 @@ local lazy_opts = {
         "bugreport",
         "ftplugin",
       },
-    }
-  }
+    },
+  },
 }
 require("lazy").setup("plugins", lazy_opts)
 

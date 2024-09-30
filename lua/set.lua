@@ -1,7 +1,7 @@
 -- MAIN SETTINGS
 
 -- Spelling
-vim.opt.spelllang = 'en_us'
+vim.opt.spelllang = "en_us"
 
 -- Set spell checker to support CamelCase
 vim.opt.spelloptions = "camel,noplainbuffer"
@@ -104,6 +104,6 @@ end
 -- Add rounded corners to diagnostic window popup
 vim.diagnostic.config({
   float = {
-    border = "rounded" -- This sets the border to rounded
-  }
+    border = "rounded", -- This sets the border to rounded
+  },
 })

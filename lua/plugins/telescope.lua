@@ -129,8 +129,8 @@ M.config = function()
   end
   local function todo()
     extensions["todo-comments"].todo({
-      keywords =
-      "FIX,FIXME,BUG,CRITICAL,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED",
+      keywords = [[FIX,FIXME,BUG,CRITICAL,FIXIT,ISSUE,WIP,UNFINISHED,FINISH,TODO,HACK,WARN,
+                   WARNING,XXX,PERF,OPTIM,PERFORMANCE,OPTIMIZE,TEST,TESTING,PASSED,FAILED]],
       layout_strategy = "vertical",
     })
   end
@@ -145,7 +145,12 @@ M.config = function()
   map("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
   map("n", "<leader>sG", builtin.git_files, { desc = "[S]earch [Git] files" })
   map("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-  map("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "[/] Fuzzily search in current buffer]" })
+  map(
+    "n",
+    "<leader>/",
+    builtin.current_buffer_fuzzy_find,
+    { desc = "[/] Fuzzily search in current buffer]" }
+  )
   map("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })
   map("n", "<leader>ws", builtin.lsp_dynamic_workspace_symbols, { desc = "[W]orkspace [S]ymbols" })
   map("n", "<leader>S", builtin.spell_suggest, { desc = "[S]pelling [S]uggestion" })

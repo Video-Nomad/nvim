@@ -2,13 +2,13 @@
 
 -- Open current file in a separate Windows Terminal pane
 vim.api.nvim_create_user_command("Open", function(_)
-  local file_path = vim.fn.expand('%:p:h')
+  local file_path = vim.fn.expand("%:p:h")
   vim.fn.system("wt -w 0 split-pane -V -d " .. file_path)
 end, { desc = "Open current file in a separate terminal pane" })
 
 -- Open current file in a separate Windows Terminal tab
 vim.api.nvim_create_user_command("OpenTab", function(_)
-  local file_path = vim.fn.expand('%:p:h')
+  local file_path = vim.fn.expand("%:p:h")
   vim.fn.system("wt -w 0 -d " .. file_path)
 end, { desc = "Open current file in a separate terminal tab" })
 
@@ -50,5 +50,5 @@ vim.api.nvim_create_user_command("Align", function(opts)
 end, {
   range = true,
   nargs = "?",
-  desc = "Align current line or selection on \"=\" sign or custom string if provided",
+  desc = 'Align current line or selection on "=" sign or custom string if provided',
 })
