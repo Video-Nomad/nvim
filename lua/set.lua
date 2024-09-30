@@ -1,4 +1,5 @@
 -- MAIN SETTINGS
+local utils = require("utils")
 
 -- Spelling
 vim.opt.spelllang = "en_us"
@@ -30,7 +31,7 @@ vim.o.shellredir = "| Out-File -Encoding utf88 %s"
 
 -- Set colors and cursor
 vim.o.termguicolors = true
-vim.o.cursorline = true
+utils:setup_cursorline()
 
 -- Use Windows clipboard by default
 vim.opt.clipboard = "unnamedplus"

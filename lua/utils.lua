@@ -82,4 +82,25 @@ function utils:swap_windows(direction)
   end
 end
 
+function utils:setup_cursorline()
+  -- Enable cursorline globally
+  vim.opt.cursorline = true
+
+  local cursorline_group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
+
+  vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "InsertLeave" }, {
+    group = cursorline_group,
+    callback = function()
+      vim.opt_local.cursorline = true
+    end,
+  })
+
+  vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave", "InsertEnter" }, {
+    group = cursorline_group,
+    callback = function()
+      vim.opt_local.cursorline = false
+    end,
+  })
+end
+
 return utils
