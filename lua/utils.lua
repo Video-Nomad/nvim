@@ -82,7 +82,7 @@ function utils:swap_windows(direction)
   end
 end
 
-function utils:setup_cursorline()
+function utils:setup_cursor()
   -- Enable cursorline globally
   vim.opt.cursorline = true
 

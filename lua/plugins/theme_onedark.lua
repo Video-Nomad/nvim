@@ -24,6 +24,7 @@ M.opts = {
   colors = {},
   highlights = {
     ["@function.builtin"] = { fg = "#61afef" },
+    ["@lsp.typemod.variable.readonly.python"] = { fg = "#d19a66" },
   },
   diagnostics = {
     darker = true,

@@ -54,6 +54,7 @@ M.config = function()
         "%.webp",
         "%.jpg",
         "%.jpeg",
+        "%.obj",
         "^node_modules",
         "\\migrations\\.*%.py",
       },

@@ -14,6 +14,10 @@ M.config = function()
   -- LSP related keymaps
   map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
   map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+  map("n", "<leader>ih", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, { desc = "[I]nlay [H]int Toggle" })
+
   map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
   map("n", "gI", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
   map("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type [D]efinition" })
@@ -68,7 +72,7 @@ M.config = function()
     clangd = {
       -- root_dir = vim.lsp.buf.list_workspace_folders()
     },
-    pyright = {
+    basedpyright = {
       python = {
         analysis = {
           root_dir = ".",

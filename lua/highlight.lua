@@ -40,7 +40,7 @@ vim.api.nvim_set_hl(0, "YankColor", { bg = "#7E6A43" })
 vim.api.nvim_set_hl(0, "MatchParen", { bg = "#515a6b" })
 
 -- Cursor Line
--- vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#242424' })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#282828" })
 
 -- Vim Illuminate Highlight groups
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { bold = true })

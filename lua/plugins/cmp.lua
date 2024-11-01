@@ -109,7 +109,7 @@ M.config = function()
         "menu",
       },
       format = function(_, vim_item)
-        vim_item.kind = icons[vim_item.kind] or ""
+        vim_item.kind = icons[vim_item.kind] or vim_item.kind or ""
         -- vim_item.abbr = vim_item.abbr:match("[^(]+")
         -- vim_item.menu = (entry:get_completion_item().detail or ""):match("->.+")
         vim_item.menu = ""

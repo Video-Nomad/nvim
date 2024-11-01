@@ -129,10 +129,13 @@ map("x", "p", [["_dP]])
 map({ "n", "v" }, "d", [["_d]], { silent = true })
 
 -- Change the macro key
-map({ "n" }, "<leader>r", "q", { silent = true, noremap = true })
+-- map({ "n" }, "<leader>r", "q", { silent = true, noremap = true })
 
 -- Repalce macro key for visual block
 map({ "n", "v" }, "q", "<C-v>", { silent = true, noremap = true })
 
 -- There's a reason this is mapped to "nop(e)"
 map("n", "Q", "<nop>", { silent = true })
+
+-- Remove F1 mapping
+map({ "n", "i", "v" }, "<F1>", "<nop>", { silent = true })

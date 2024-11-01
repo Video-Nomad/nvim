@@ -10,3 +10,20 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.expandtab = false
   end,
 })
+
+-- Treesitter RST fix (broken highlights)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "rst" then
+      local parser = vim.treesitter.get_parser(0)
+      if parser then
+        parser:register_cbs({
+          on_bytes = function()
+            parser:parse()
+          end,
+        })
+      end
+    end
+  end,
+})

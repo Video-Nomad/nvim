@@ -46,7 +46,7 @@ M.config = function()
 
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = { "markdown" },
+      additional_vim_regex_highlighting = { "markdown", "rst" },
 
       -- We can disable treesitter highligh on large files
       -- disable = function(lang, buf)
@@ -59,7 +59,7 @@ M.config = function()
       -- disable = { "python" }, -- TODO: Do we want to disable this?
     },
     incremental_selection = {
-      enable = true,
+      enable = false,
       keymaps = {
         init_selection = "<c-space>",
         node_incremental = "<c-space>",
