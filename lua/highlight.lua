@@ -34,7 +34,7 @@ vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { fg = "#98C379" })
 
 -- Yank color
-vim.api.nvim_set_hl(0, "YankColor", { bg = "#7E6A43" })
+vim.api.nvim_set_hl(0, "YankColor", { bg = "#186C3F" })
 
 -- Matching parenthesis highlight
 vim.api.nvim_set_hl(0, "MatchParen", { bg = "#515a6b" })
