@@ -54,6 +54,7 @@ M.config = function()
         "%.webp",
         "%.jpg",
         "%.jpeg",
+        "%.gif",
         "%.obj",
         "^node_modules",
         "\\migrations\\.*%.py",
@@ -142,7 +143,7 @@ M.config = function()
   map("n", "<leader>sg", function()
     builtin.live_grep({ additional_args = { "--pcre2" } })
   end, { desc = "[S]earch by [G]rep" })
-  -- map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' }) -- Delegated to Trouble (for now)
+  map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
   map("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
   map("n", "<leader>sG", builtin.git_files, { desc = "[S]earch [Git] files" })
   map("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })

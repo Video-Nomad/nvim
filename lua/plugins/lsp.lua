@@ -97,8 +97,7 @@ M.config = function()
       },
     },
     jsonls = {},
-    csharp_ls = {},
-    ruff_lsp = {},
+    ruff = {},
     docker_compose_language_service = {},
   }
 
