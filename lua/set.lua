@@ -32,7 +32,7 @@ vim.o.shellredir = "| Out-File -Encoding utf88 %s"
 -- Set colors and cursor
 vim.o.termguicolors = true
 vim.o.cursorline = true
--- utils:setup_cursor()
+utils:restore_cursor_setup()
 
 -- Use Windows clipboard by default
 vim.opt.clipboard = "unnamedplus"

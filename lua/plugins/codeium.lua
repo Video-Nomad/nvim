@@ -22,7 +22,7 @@ M.keys = {
 
 M.config = function()
   require("codeium").setup({
-    enable_chat = true,
+    enable_chat = false,
     enable_cmp_source = false,
     idle_delay = 100,
     virtual_text = {

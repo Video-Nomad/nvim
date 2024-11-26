@@ -20,7 +20,7 @@ M.config = function()
 
   map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
   map("n", "gI", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
-  map("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type [D]efinition" })
+  map("n", "gtd", vim.lsp.buf.type_definition, { desc = "Type [D]efinition" })
 
   -- Signature help and hover
   map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
@@ -72,7 +72,7 @@ M.config = function()
     clangd = {
       -- root_dir = vim.lsp.buf.list_workspace_folders()
     },
-    basedpyright = {
+    pyright = {
       python = {
         analysis = {
           root_dir = ".",
@@ -99,6 +99,7 @@ M.config = function()
     jsonls = {},
     ruff = {},
     docker_compose_language_service = {},
+    omnisharp = {},
   }
 
   -- Setup neovim lua configuration
