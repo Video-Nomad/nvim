@@ -1,42 +1,68 @@
-local M = { "Exafunction/codeium.nvim" }
+local M = { "Exafunction/codeium.vim" }
 
-M.event = "VeryLazy"
+vim.g.codeium_disable_bindings = 1
+vim.g.codeium_manual = false
+vim.g.codeium_idle_delay = 100
 
-M.cmd = "Codeium Chat"
-
-M.dependencies = {
-  "nvim-lua/plenary.nvim",
-  "hrsh7th/nvim-cmp",
+M.cmd = {
+  "Codeium",
+  "CodeiumAuto",
+  "CodeiumManual",
+  "CodeiumToggle",
+  "CodeiumEnable",
+  "CodeiumDisable",
 }
 
 M.keys = {
   {
     "<A-c>",
     function()
-      require("codeium.virtual_text").cycle_or_complete()
+      return vim.fn["codeium#Complete"]()
     end,
     mode = "i",
     desc = "Generate AI Completion",
+    expr = true,
+  },
+  {
+    "<A-a>",
+    function()
+      return vim.fn["codeium#Accept"]()
+    end,
+    mode = "i",
+    desc = "Accept AI Completion",
+    expr = true,
+  },
+  {
+    "<A-]>",
+    function()
+      return vim.fn["codeium#CycleCompletions"](1)
+    end,
+    mode = "i",
+    desc = "Cycle AI Completions +",
+    expr = true,
+  },
+  {
+    "<A-[>",
+    function()
+      return vim.fn["codeium#CycleCompletions"](-1)
+    end,
+    mode = "i",
+    desc = "Cycle AI Completions -",
+    expr = true,
+  },
+  {
+    "<A-x>",
+    function()
+      return vim.fn["codeium#Clear"]()
+    end,
+    mode = "i",
+    desc = "Clear AI Completions",
+    expr = true,
   },
 }
 
 M.config = function()
-  require("codeium").setup({
-    enable_chat = false,
-    enable_cmp_source = false,
-    idle_delay = 100,
-    virtual_text = {
-      enabled = true,
-      manual = true,
-      map_keys = true,
-      key_bindings = {
-        accept = "<A-a>",
-        next = "<A-]>",
-        prev = "<A-[>",
-        clear = "<A-x>",
-      },
-    },
-  })
+  vim.fn["CodeiumEnable"]()
 end
 
 return M
