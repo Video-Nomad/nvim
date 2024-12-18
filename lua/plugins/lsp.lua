@@ -72,7 +72,7 @@ M.config = function()
     clangd = {
       -- root_dir = vim.lsp.buf.list_workspace_folders()
     },
-    pyright = {
+    basedpyright = {
       python = {
         analysis = {
           root_dir = ".",

@@ -53,3 +53,18 @@ end, {
   nargs = "?",
   desc = 'Align current line or selection on "=" sign or custom string if provided',
 })
+
+-- Function to execute ripgrep and populate quickfix list ignoring the ignore list
+local function ripgrep_to_quickfix(args)
+  -- Parse commands to be one string
+  local cmd = "rg " .. args .. " --vimgrep -uuu"
+  vim.cmd("cgetexpr system('" .. cmd .. "')")
+  vim.cmd("cw")
+end
+
+-- Register the custom command 'Grep'
+vim.api.nvim_create_user_command("Grep", function(opts)
+  -- Concat opts to one string
+  local args = table.concat(opts.fargs, " ")
+  ripgrep_to_quickfix(args)
+end, { nargs = 1 })
