@@ -57,7 +57,7 @@ end, {
 -- Function to execute ripgrep and populate quickfix list ignoring the ignore list
 local function ripgrep_to_quickfix(args)
   -- Parse commands to be one string
-  local cmd = "rg " .. args .. " --vimgrep -uuu"
+  local cmd = "rg " .. args .. " --vimgrep --pcre2"
   vim.cmd("cgetexpr system('" .. cmd .. "')")
   vim.cmd("cw")
 end
