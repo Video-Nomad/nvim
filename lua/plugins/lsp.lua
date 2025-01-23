@@ -66,6 +66,7 @@ M.config = function()
     html = {
       format = {
         wrapLineLength = 140,
+        templating = true,
       },
     },
     volar = {},
@@ -137,6 +138,16 @@ M.config = function()
   require("lspconfig")["docker_compose_language_service"].setup({
     filetypes = { "yml", "yaml" },
   })
+
+  -- Hardcoded and only for Windows for now
+  if vim.fn.has("win32") == 1 then
+    local nginx_lsp_path = vim.fn.expand("$USERPROFILE")
+      .. "/Python/3.11.4/Scripts/nginx-language-server.exe"
+    require("lspconfig")["nginx_language_server"].setup({
+      cmd = { nginx_lsp_path },
+      filetypes = { "nginx" },
+    })
+  end
 
   require("lspconfig")["volar"].setup({
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
