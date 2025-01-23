@@ -59,12 +59,10 @@ M.config = function()
       -- disable = { "python" }, -- TODO: Do we want to disable this?
     },
     incremental_selection = {
-      enable = false,
+      enable = true,
       keymaps = {
-        init_selection = "<c-space>",
-        node_incremental = "<c-space>",
-        scope_incremental = "<c-s>",
-        node_decremental = "<c-backspace>",
+        node_incremental = "<a-=>",
+        node_decremental = "<a-->",
       },
     },
     textobjects = {

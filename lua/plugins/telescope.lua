@@ -78,7 +78,9 @@ M.config = function()
         previewer = false,
         path_display = { "filename_first" },
       },
-      git_files = {},
+      git_status = {
+        path_display = { "filename_first" },
+      },
       lsp_document_symbols = {
         layout_strategy = "flex",
         symbol_width = 0.7,
@@ -147,9 +149,9 @@ M.config = function()
   map("n", "<leader>sg", function()
     builtin.live_grep({ additional_args = { "--pcre2" } })
   end, { desc = "[S]earch by [G]rep" })
-  map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+  map("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
   map("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
-  map("n", "<leader>sG", builtin.git_files, { desc = "[S]earch [Git] files" })
+  map("n", "<leader>gs", builtin.git_status, { desc = "[S]earch [Git] files" })
   map("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
   map(
     "n",

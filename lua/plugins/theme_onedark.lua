@@ -4,7 +4,7 @@ M.lazy = false
 M.priority = 1000
 
 M.opts = {
-  style = "dark",
+  style = "darker",
   transparent = true,
   term_colors = true,
   ending_tildes = false,
