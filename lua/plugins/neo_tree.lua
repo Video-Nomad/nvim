@@ -36,7 +36,7 @@ M.config = function()
           end)
         end,
 
-        -- over write default 'delete_visual' command to 'trash' x n.
+        -- Override default 'delete_visual' command to move to trash
         delete_visual = function(state, selected_nodes)
           local inputs = require("neo-tree.ui.inputs")
 
