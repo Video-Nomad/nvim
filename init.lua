@@ -33,6 +33,8 @@ local lazy_opts = {
   performance = {
     rtp = {
       disabled_plugins = {
+        "netrw",
+        "netrwPlugin",
         "2html_plugin",
         "tohtml",
         "getscript",
