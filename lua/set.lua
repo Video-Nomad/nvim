@@ -89,7 +89,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.wo.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
-vim.opt.listchars = { trail = "∙", extends = "→", tab = "  " }
+vim.opt.listchars = { trail = "∙", extends = "→", tab = "  ", nbsp = "⦸" }
 vim.opt.list = true
 
 -- Set completeopt to have a better completion experience
