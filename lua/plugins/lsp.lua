@@ -3,7 +3,8 @@ local M = { "neovim/nvim-lspconfig" }
 M.event = "VeryLazy"
 
 M.dependencies = {
-  "hrsh7th/nvim-cmp",
+  -- "hrsh7th/nvim-cmp",
+  "saghen/blink.cmp",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "folke/neodev.nvim",
@@ -101,14 +102,17 @@ M.config = function()
     ruff = {},
     docker_compose_language_service = {},
     omnisharp = {},
+    astro = {
+      typescript = {},
+    },
   }
 
   -- Setup neovim lua configuration
   require("neodev").setup()
 
-  -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+  -- blink supports additional completion capabilities, so broadcast that to servers
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+  capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
   -- Setup mason so it can manage external tooling
   require("mason").setup()

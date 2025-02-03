@@ -15,29 +15,7 @@ M.config = function()
   -- See `:help nvim-treesitter`
   require("nvim-treesitter.configs").setup({
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = {
-      "c",
-      "cpp",
-      "css",
-      "go",
-      "html",
-      "htmldjango",
-      "javascript",
-      "json",
-      "lua",
-      "markdown",
-      "markdown_inline",
-      "python",
-      "regex",
-      "rust",
-      "scss",
-      "toml",
-      "typescript",
-      "vim",
-      "vue",
-      "yaml",
-    },
-
+    ensure_installed = {},
     ignore_install = {},
     modules = {},
 
