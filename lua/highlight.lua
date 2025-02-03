@@ -54,5 +54,8 @@ vim.api.nvim_set_hl(0, "IblIndent", { fg = "#262626", nocombine = true })
 vim.api.nvim_set_hl(0, "BufferCurrentERROR", { fg = "#E86671", nocombine = true })
 vim.api.nvim_set_hl(0, "BufferCurrentWARN", { fg = "#E5C07B", nocombine = true })
 
+-- Blink
+vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelp", { bg = "#282C34", nocombine = true })
+
 -- Set spelling check highlight group to purple
 vim.api.nvim_set_hl(0, "SpellBad", { sp = "orange", nocombine = true, undercurl = true })
