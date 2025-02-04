@@ -48,7 +48,7 @@ vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bold = true })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bold = true })
 
 -- Indent Blankline Highlight Color
-vim.api.nvim_set_hl(0, "IblIndent", { fg = "#262626", nocombine = true })
+vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#303030", nocombine = true })
 
 -- Barbar Colors
 vim.api.nvim_set_hl(0, "BufferCurrentERROR", { fg = "#E86671", nocombine = true })
