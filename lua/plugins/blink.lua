@@ -2,18 +2,29 @@ local M = { "saghen/blink.cmp" }
 -- optional: provides snippets for the snippet source
 M.dependencies = {
   "rafamadriz/friendly-snippets",
-  -- { "L3MON4D3/LuaSnip", version = "v2.*" },
+  { "L3MON4D3/LuaSnip", version = "v2.*" },
 }
 
 M.lazy = false
 
-M.build = "cargo build --release"
+M.version = '*'
 
 M.config = function()
   require("blink-cmp").setup({
     keymap = {
       ["<C-q>"] = { "show", "fallback" },
-      ["<TAB>"] = { "select_and_accept", "fallback" },
+      ['<Tab>'] = {
+        function(cmp)
+          if cmp.snippet_active() then
+            return cmp.accept()
+          else
+            return cmp.select_and_accept()
+          end
+        end,
+        'snippet_forward',
+        'fallback'
+      },
+      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
       ["<CR>"] = { "select_and_accept", "fallback" },
       ["<C-p>"] = { "select_prev", "fallback" },
       ["<C-n>"] = { "select_next", "fallback" },
@@ -45,7 +56,7 @@ M.config = function()
       },
     },
 
-    -- snippets = { preset = "luasnip" },
+    snippets = { preset = "default" },
 
     signature = {
       enabled = true,

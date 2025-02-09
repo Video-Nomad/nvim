@@ -12,10 +12,9 @@ M.config = function()
     },
     symbol = "│"
   })
-  vim.keymap.set("n", "<leader>in", function ()
+  vim.keymap.set("n", "<leader>in", function()
     vim.g.miniindentscope_disable = not vim.g.miniindentscope_disable
   end, { desc = "Toggle Indent Scope" })
 end
-
 
 return M

@@ -111,8 +111,7 @@ M.config = function()
   require("neodev").setup()
 
   -- blink supports additional completion capabilities, so broadcast that to servers
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+  local capabilities = require("blink.cmp").get_lsp_capabilities()
 
   -- Setup mason so it can manage external tooling
   require("mason").setup()
@@ -146,7 +145,7 @@ M.config = function()
   -- Hardcoded and only for Windows for now
   if vim.fn.has("win32") == 1 then
     local nginx_lsp_path = vim.fn.expand("$USERPROFILE")
-      .. "/Python/3.11.4/Scripts/nginx-language-server.exe"
+        .. "/Python/3.11.4/Scripts/nginx-language-server.exe"
     require("lspconfig")["nginx_language_server"].setup({
       cmd = { nginx_lsp_path },
       filetypes = { "nginx" },
@@ -174,17 +173,17 @@ M.config = function()
 
   -- Configure the lsp diagnostics visualisation
   vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = true,
-      severity_sort = true,
-      update_in_insert = false,
-      signs = {
-        severity = { min = vim.diagnostic.severity.WARN },
-      },
-      virtual_text = {
-        severity = { min = vim.diagnostic.severity.WARN },
-      },
-    })
+      vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = true,
+        severity_sort = true,
+        update_in_insert = false,
+        signs = {
+          severity = { min = vim.diagnostic.severity.WARN },
+        },
+        virtual_text = {
+          severity = { min = vim.diagnostic.severity.WARN },
+        },
+      })
 
   -- Set rounded borders for LspInfo window
   require("lspconfig.ui.windows").default_options.border = "rounded"

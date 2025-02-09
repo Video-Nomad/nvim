@@ -77,6 +77,7 @@ M.config = function()
       },
     },
     window = {
+      width = 34,
       mappings = {
         ["<A-,>"] = "prev_source",
         ["<A-.>"] = "next_source",
