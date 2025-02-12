@@ -7,6 +7,8 @@ M.dependencies = {
   "MunifTanjim/nui.nvim",
 }
 
+M.lazy = false
+
 M.cmd = "Neotree"
 
 M.keys = {
@@ -21,6 +23,7 @@ M.config = function()
       statusline = true,
     },
     filesystem = {
+      hijack_netrw_behavior = "open_current",
       commands = {
         -- Override the delete command to move to trash
         delete = function(state)
