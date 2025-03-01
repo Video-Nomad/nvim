@@ -30,10 +30,7 @@ M.config = function()
       ["<C-n>"] = { "select_next", "fallback" },
       ["<A-p>"] = { "select_prev", "fallback" },
       ["<A-n>"] = { "select_next", "fallback" },
-      cmdline = {
-        ["<TAB>"] = { "accept", "fallback" },
-        ["<CR>"] = { "fallback" },
-      },
+
     },
 
     appearance = {

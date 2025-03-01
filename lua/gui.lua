@@ -1,10 +1,10 @@
 -- Neovide specific stuff
 if vim.g.neovide then
   vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
-  vim.g.neovide_refresh_rate = 240
+  vim.g.neovide_refresh_rate = 180
   vim.g.neovide_cursor_animate_command_line = false
-  vim.g.neovide_hide_mouse_when_typing = false
-  vim.opt.linespace = 3
+  vim.g.neovide_hide_mouse_when_typing = true
+  vim.opt.linespace = 0
   vim.g.neovide_scroll_animation_length = 0.1
   vim.g.neovide_position_animation_length = 0.1
   vim.g.neovide_no_idle = true

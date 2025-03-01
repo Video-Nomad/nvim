@@ -1,0 +1,14 @@
+local M = { "nvimdev/indentmini.nvim" }
+
+M.event = "VeryLazy"
+
+M.config = function()
+  require("indentmini").setup({
+    char = "│",
+  })
+  vim.cmd.highlight('IndentLine guifg=#282828')
+  vim.cmd.highlight('IndentLineCurrent guifg=#282828')
+end
+
+
+return M

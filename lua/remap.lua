@@ -3,7 +3,7 @@ local utils = require("utils")
 local map = vim.keymap.set
 
 -- WM stuff
-map({ "n", "v", "i" }, "<F24>", "<Nop>", { silent = true })
+map({ "n", "v", "i" }, "<F23>", "<Nop>", { silent = true })
 
 -- Keymaps for better default experience
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
