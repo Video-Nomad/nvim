@@ -1,8 +1,25 @@
 local M = { "folke/todo-comments.nvim" }
 
-M.event = "VeryLazy"
+M.dependencies = { "folke/snacks.nvim" }
 
-M.keys = { { "<leader>wt" }, { "<leader>wn" } }
+local function todo()
+  Snacks.picker.todo_comments({
+    keywords = { "FIX", "FIXME", "BUG", "CRITICAL", "FIXIT", "ISSUE", "WIP", "UNFINISHED", "FINISH", "TODO", "HACK",
+      "WARN",
+      "WARNING", "XXX", "PERF", "OPTIM", "PERFORMANCE", "OPTIMIZE", "TEST", "TESTING", "PASSED", "FAILED" },
+  })
+end
+
+local function todo_notes()
+  Snacks.picker.todo_comments({
+    keywords = { "NOTE", "INFO" },
+  })
+end
+
+M.keys = {
+  { "<leader>wt", todo,       desc = "Todo" },
+  { "<leader>wn", todo_notes, desc = "Todo/Fix/Fixme" },
+}
 
 M.opts = {
   signs = true,

@@ -19,10 +19,6 @@ M.config = function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, { desc = "[I]nlay [H]int Toggle" })
 
-  map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
-  map("n", "gI", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
-  map("n", "gtd", vim.lsp.buf.type_definition, { desc = "Type [D]efinition" })
-
   -- Signature help and hover
   map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
   map(
@@ -33,7 +29,6 @@ M.config = function()
   )
 
   -- Lesser used LSP functionality
-  map("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "[W]orkspace [A]dd Folder" })
   map(
     "n",

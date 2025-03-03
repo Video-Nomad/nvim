@@ -59,3 +59,7 @@ vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelp", { bg = "#282C34", nocombine = tr
 
 -- Set spelling check highlight group to purple
 vim.api.nvim_set_hl(0, "SpellBad", { sp = "orange", nocombine = true, undercurl = true })
+
+-- Snacks Colors
+vim.api.nvim_set_hl(0, "SnacksPickerSearch", { fg = "#ffffff", bg = "#E86671", nocombine = true })
+vim.api.nvim_set_hl(0, "SnacksPickerPreviewCursorLine", { bg = "none", nocombine = true })
