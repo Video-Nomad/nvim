@@ -1,5 +1,7 @@
 local M = { "folke/todo-comments.nvim" }
 
+M.event = "VeryLazy"
+
 M.dependencies = { "folke/snacks.nvim" }
 
 local function todo()

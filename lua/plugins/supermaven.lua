@@ -9,6 +9,7 @@ M.config = function()
       clear_suggestion = "<A-x>",
       accept_word = "<A-j>",
     },
+    ignore_filetypes = { "neo-tree", "snacks_picker_list" },
   })
 end
 
