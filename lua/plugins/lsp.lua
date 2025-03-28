@@ -3,7 +3,6 @@ local M = { "neovim/nvim-lspconfig" }
 M.event = "VeryLazy"
 
 M.dependencies = {
-  -- "hrsh7th/nvim-cmp",
   "saghen/blink.cmp",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
@@ -155,33 +154,6 @@ M.config = function()
       },
     },
   })
-
-  -- Show hover popup with a border
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-  })
-
-  -- Show signature help with a rounded border
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-  })
-
-  -- Configure the lsp diagnostics visualisation
-  vim.lsp.handlers["textDocument/publishDiagnostics"] =
-      vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        severity_sort = true,
-        update_in_insert = false,
-        signs = {
-          severity = { min = vim.diagnostic.severity.WARN },
-        },
-        virtual_text = {
-          severity = { min = vim.diagnostic.severity.WARN },
-        },
-      })
-
-  -- Set rounded borders for LspInfo window
-  require("lspconfig.ui.windows").default_options.border = "rounded"
 end
 
 return M

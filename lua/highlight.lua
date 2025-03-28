@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- ]])
 
 -- Floating window colors
-vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#202020" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 
 -- Signature help
@@ -55,7 +55,9 @@ vim.api.nvim_set_hl(0, "BufferCurrentERROR", { fg = "#E86671", nocombine = true 
 vim.api.nvim_set_hl(0, "BufferCurrentWARN", { fg = "#E5C07B", nocombine = true })
 
 -- Blink
-vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelp", { bg = "#282C34", nocombine = true })
+vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelp", { bg = "#202020", nocombine = true })
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#202020", nocombine = true })
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#202020", nocombine = true })
 
 -- Set spelling check highlight group to purple
 vim.api.nvim_set_hl(0, "SpellBad", { sp = "orange", nocombine = true, undercurl = true })

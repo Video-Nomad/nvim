@@ -87,7 +87,7 @@ vim.o.ttimeoutlen = 0
 -- Some other stuff
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.wo.signcolumn = "yes"
+vim.opt.signcolumn = "yes:1"
 vim.opt.fillchars = { eob = " " }
 vim.opt.listchars = { trail = "∙", extends = "→", tab = "  ", nbsp = "⦸" }
 vim.opt.list = true
@@ -95,6 +95,7 @@ vim.opt.list = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.pumheight = 11
+vim.o.winborder = "rounded"
 
 -- Change diagnostic signs (icons)
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }

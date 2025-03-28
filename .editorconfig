@@ -2,3 +2,6 @@ indent_type = "Spaces"
 indent_width = 2
 column_width = 100
 quote_style = "AutoPreferDouble"
+align_continuous_assign_statement = false
+align_continuous_rect_table_field = false
+
