@@ -67,7 +67,7 @@ require("lazy").setup("plugins", lazy_opts)
 vim.cmd([[colorscheme onedark]])
 
 -- Load everything else
-require("set")
+require("settings")
 require("remap")
 require("commands")
 require("gui")

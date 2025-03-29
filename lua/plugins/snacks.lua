@@ -2,6 +2,9 @@ local M = { "folke/snacks.nvim" }
 
 ---@type snacks.Config
 M.opts = {
+  statuscolumn = {
+    enabled = false,
+  },
   picker = {
     win = {
       input = {
@@ -15,11 +18,6 @@ M.opts = {
 
     }
   },
-  statuscolumn = {
-    -- your statuscolumn configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
 }
 
 local files_config = {
