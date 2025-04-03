@@ -12,8 +12,8 @@ vim.opt.shortmess:append("c")
 vim.opt.shortmess:append("I")
 
 -- Use unix file format by default
-vim.opt.fileformat = "unix"
-vim.opt.fileformats = "unix,dos"
+vim.opt.fileformat = "dos"
+vim.opt.fileformats = "dos,unix"
 
 -- Remove cmd line when not needed
 vim.o.cmdheight = 0
