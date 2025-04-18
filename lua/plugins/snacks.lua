@@ -59,6 +59,7 @@ M.keys = {
   { "<leader>S",       function() Snacks.picker.spelling() end,                                      desc = "Spelling" },
   -- Misc
   { "<leader>sH",      function() Snacks.picker.highlights() end,                                    desc = "Highlights" },
+  { "<leader>bb",     function() Snacks.picker.marks() end,                                         desc = "Bookmarks" },
 
 }
 
