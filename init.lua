@@ -1,4 +1,4 @@
--- Main entry point for NeoVim
+-- Main entry point for Neovim
 
 -- Installing Lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
