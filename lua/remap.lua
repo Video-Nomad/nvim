@@ -18,14 +18,10 @@ map({ "v", "n" }, "<leader>ff", function()
 end, { desc = "[F]ormat [F]ile or selection" })
 
 -- Diagnostic keymaps
-map("n", "[d", vim.diagnostic.goto_prev)
-map("n", "]d", vim.diagnostic.goto_next)
+map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end)
+map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end)
 map("n", "<leader>q", vim.diagnostic.setloclist)
 map("n", "<leader>e", vim.diagnostic.open_float)
-
--- Allows to move highlited code
--- map("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
--- map("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Resize splits ------------------------------------------
 -- Increase width of current split when it's on the right
