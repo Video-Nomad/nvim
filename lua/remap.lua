@@ -84,10 +84,6 @@ map("n", "<S-A-k>", function()
   utils:swap_windows("k")
 end, { noremap = true, silent = true })
 
--- Keep visual selection when indenting and dedenting
-map("v", "<", "<gv^", { silent = true })
-map("v", ">", ">gv^", { silent = true })
-
 -- Allows to quickly move cursor if in insert mode
 map("i", "<A-h>", "<Esc>", { silent = true })
 map("i", "<A-j>", "<Esc>jl", { silent = true })
