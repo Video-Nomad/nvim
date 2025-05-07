@@ -59,7 +59,6 @@ vim.keymap.set("n", "<A-Down>", function()
     return "<C-W>+"
   end
 end, { expr = true, silent = true })
------------------------------------------------------------
 
 -- Move between splits
 map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
@@ -109,6 +108,10 @@ map("n", "<A-w>", ":set wrap!<CR>", { silent = true, noremap = true })
 -- Keep cursor in the middle when jumping half a screen
 map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
+
+-- Keep the cursor in the middle during jumplist navigation
+map('n', '<C-i>', '<C-i>zz', { noremap = true })
+map('n', '<C-o>', '<C-o>zz', { noremap = true })
 
 -- Keep search terms in the middle
 map("n", "n", "nzzzv", { silent = true })
