@@ -65,3 +65,5 @@ vim.api.nvim_set_hl(0, "SpellBad", { sp = "orange", nocombine = true, undercurl 
 -- Snacks Colors
 vim.api.nvim_set_hl(0, "SnacksPickerSearch", { fg = "#ffffff", bg = "#E86671", nocombine = true })
 vim.api.nvim_set_hl(0, "SnacksPickerPreviewCursorLine", { bg = "none", nocombine = true })
+
+vim.api.nvim_set_hl(0, "SupermavenSuggestion", { bg = "red", fg = "white", nocombine = true })
