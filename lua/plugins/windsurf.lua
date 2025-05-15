@@ -1,4 +1,4 @@
-local M = { "Video-Nomad/windsurf.nvim" }
+local M = { "Exafunction/windsurf.nvim" }
 
 M.event = "VeryLazy"
 
@@ -28,6 +28,12 @@ M.config = function()
       }
     }
   })
+
+  -- This is a fix for windows newlines showing ^M
+  ---@diagnostic disable:duplicate-set-field
+  require('codeium.util').get_newline = function()
+    return "\n"
+  end
 end
 
 return M
