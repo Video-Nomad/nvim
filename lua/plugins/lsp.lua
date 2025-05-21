@@ -63,7 +63,6 @@ M.config = function()
         templating = true,
       },
     },
-    volar = {},
     clangd = {
       -- root_dir = vim.lsp.buf.list_workspace_folders()
     },
@@ -130,14 +129,14 @@ M.config = function()
     })
   end
 
-  require("lspconfig")["volar"].setup({
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-    init_options = {
-      vue = {
-        hybridMode = false,
-      },
-    },
-  })
+  -- require("lspconfig")["vue_ls"].setup({
+  --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+  --   init_options = {
+  --     vue = {
+  --       hybridMode = false,
+  --     },
+  --   },
+  -- })
 end
 
 return M

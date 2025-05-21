@@ -1,5 +1,4 @@
 -- CUSTOM COMMANDS FOR NEOVIM
-require("commands.align")
 
 -- Open current file in a separate Windows Terminal pane
 vim.api.nvim_create_user_command("Open", function(_)

@@ -22,7 +22,7 @@ M.config = function()
       virt_text = true,
       virt_text_pos = 'eol',
       delay = 1000,
-      ignore_whitespace = false,
+      ignore_whitespace = true,
       virt_text_priority = 100,
       use_focus = true,
     },
