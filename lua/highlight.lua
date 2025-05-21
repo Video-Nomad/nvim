@@ -67,3 +67,8 @@ vim.api.nvim_set_hl(0, "SnacksPickerSearch", { fg = "#ffffff", bg = "#E86671", n
 vim.api.nvim_set_hl(0, "SnacksPickerPreviewCursorLine", { bg = "none", nocombine = true })
 
 vim.api.nvim_set_hl(0, "SupermavenSuggestion", { bg = "red", fg = "white", nocombine = true })
+
+-- Indent Blankline Highlight Color
+vim.api.nvim_set_hl(0, "IblIndent", { fg = "#363636" })
+vim.api.nvim_set_hl(0, "IblWhitespace", { fg = "#363636" })
+vim.api.nvim_set_hl(0, "IblScope", { fg = "#444444" })
