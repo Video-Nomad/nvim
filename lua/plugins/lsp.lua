@@ -38,14 +38,6 @@ M.config = function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, { desc = "[W]orkspace [L]ist Folders" })
 
-  -- This function gets run when an LSP connects to a particular buffer.
-  local on_attach = function(_, bufnr)
-    -- Create a command `:Format` local to the LSP buffer
-    vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-      require("conform").format({ lsp_format = "fallback" })
-    end, { desc = "Format current buffer with LSP" })
-  end
-
   -- Enable the following language servers
   local servers = {
     rust_analyzer = {},
@@ -65,6 +57,8 @@ M.config = function()
     },
     clangd = {
       -- root_dir = vim.lsp.buf.list_workspace_folders()
+    },
+    vue_ls = {
     },
     basedpyright = {
       python = {
@@ -129,14 +123,16 @@ M.config = function()
     })
   end
 
-  -- require("lspconfig")["vue_ls"].setup({
-  --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-  --   init_options = {
-  --     vue = {
-  --       hybridMode = false,
-  --     },
-  --   },
-  -- })
+  vim.lsp.config('vue_ls', {
+    -- add filetypes for typescript, javascript and vue
+    filetypes = { 'vue' },
+    init_options = {
+      vue = {
+        -- disable hybrid mode
+        hybridMode = false,
+      },
+    },
+  })
 end
 
 return M
