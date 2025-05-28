@@ -95,7 +95,7 @@ vim.opt.list = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.pumheight = 11
--- vim.o.winborder = "rounded"
+vim.o.winborder = "rounded"
 
 -- Change diagnostic signs (icons)
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
