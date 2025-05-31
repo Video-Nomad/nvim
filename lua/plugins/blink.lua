@@ -8,7 +8,7 @@ M.dependencies = {
 
 M.lazy = false
 
-M.version = '1.*'
+M.build = "cargo build --release"
 
 M.config = function()
   require("blink-cmp").setup({
