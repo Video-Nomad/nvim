@@ -6,9 +6,9 @@ M.dependencies = {
   { "L3MON4D3/LuaSnip", version = "v2.*" },
 }
 
-M.lazy = false
+M.event = "VeryLazy"
 
-M.build = "cargo build --release"
+M.version = "1.*"
 
 M.config = function()
   require("blink-cmp").setup({

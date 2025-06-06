@@ -72,6 +72,7 @@ M.config = function()
 
   -- Close buffers
   map("n", "<leader>bc", "<Cmd>BufferLineCloseOthers<CR>", opts)
+  map("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", opts)
   map("n", "<A-c>", "<Cmd>bd<CR>", opts)
 end
 
