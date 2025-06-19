@@ -11,6 +11,9 @@ M.config = function()
   ---@type ibl.config
   require("ibl").setup({
     enabled = false,
+    indent = {
+      char = "│",
+    },
     scope = {
       enabled = true,
       show_end = false,

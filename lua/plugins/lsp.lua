@@ -59,6 +59,8 @@ M.config = function()
     },
     vue_ls = {
     },
+    -- ty = {
+    -- },
     basedpyright = {
       python = {
         analysis = {
