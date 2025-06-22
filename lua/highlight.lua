@@ -73,4 +73,4 @@ vim.api.nvim_set_hl(0, "IblIndent", { fg = "#363636" })
 vim.api.nvim_set_hl(0, "IblWhitespace", { fg = "#363636" })
 vim.api.nvim_set_hl(0, "IblScope", { fg = "#444444" })
 
-vim.api.nvim_set_hl(0, "MiniSurround", { fg = "white", bg = "#E86671" })
+vim.api.nvim_set_hl(0, "NvimSurroundHighlight", { fg = "white", bg = "#E86671" })
