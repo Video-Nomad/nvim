@@ -3,6 +3,7 @@ local M = { 'echasnovski/mini.nvim' }
 M.version = false
 
 M.config = function()
+  require("mini.align").setup()
   require("mini.move").setup({
     -- Module mappings. Use `''` (empty string) to disable one.
     mappings = {
