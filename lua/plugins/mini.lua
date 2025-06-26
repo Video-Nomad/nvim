@@ -2,6 +2,21 @@ local M = { 'echasnovski/mini.nvim' }
 
 M.version = false
 
+M.keys = {
+  -- Visual mode mappings
+  { "K",     mode = "v", desc = "Move up" },
+  { "J",     mode = "v", desc = "Move down" },
+  { "H",     mode = "v", desc = "Move left" },
+  { "L",     mode = "v", desc = "Move right" },
+  -- Normal mode mappings
+  { "<A-k>", mode = "n", desc = "Move up" },
+  { "<A-j>", mode = "n", desc = "Move down" },
+  { "<A-h>", mode = "n", desc = "Move left" },
+  { "<A-l>", mode = "n", desc = "Move right" },
+  -- Align mappings
+  { "ga",    mode = "n", desc = "Align to the character" },
+}
+
 M.config = function()
   require("mini.align").setup()
   require("mini.move").setup({
