@@ -117,7 +117,7 @@ M.config = function()
   -- Hardcoded and only for Windows for now
   if vim.fn.has("win32") == 1 then
     local nginx_lsp_path = vim.fn.expand("$USERPROFILE")
-        .. "/Python/3.11.4/Scripts/nginx-language-server.exe"
+        .. "/Python/3.11.9/Scripts/nginx-language-server.exe"
     require("lspconfig")["nginx_language_server"].setup({
       cmd = { nginx_lsp_path },
       filetypes = { "nginx" },
