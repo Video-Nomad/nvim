@@ -8,11 +8,6 @@ M.keys = {
   { "J",     mode = "v", desc = "Move down" },
   { "H",     mode = "v", desc = "Move left" },
   { "L",     mode = "v", desc = "Move right" },
-  -- Normal mode mappings
-  { "<A-k>", mode = "n", desc = "Move up" },
-  { "<A-j>", mode = "n", desc = "Move down" },
-  { "<A-h>", mode = "n", desc = "Move left" },
-  { "<A-l>", mode = "n", desc = "Move right" },
   -- Align mappings
   { "ga",    mode = "n", desc = "Align to the character" },
 }
@@ -29,10 +24,10 @@ M.config = function()
       up = 'K',
 
       -- Move current line in Normal mode
-      line_left = '<A-h>',
-      line_right = '<A-l>',
-      line_down = '<A-j>',
-      line_up = '<A-k>',
+      line_left = '',
+      line_right = '',
+      line_down = '',
+      line_up = '',
     },
 
     -- Options which control moving behavior
