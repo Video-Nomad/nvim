@@ -10,7 +10,25 @@ M.event = "VeryLazy"
 
 M.version = "1.*"
 
+
 M.config = function()
+  local ft = vim.bo.filetype
+
+  local default_sources = {
+    "lazydev",
+    "lsp",
+    "path",
+    "snippets",
+    "buffer",
+  }
+
+  -- Remove "snippets" for PowerShell files because of lag
+  if ft == "ps1" then
+    default_sources = vim.tbl_filter(function(source)
+      return source ~= "snippets"
+    end, default_sources)
+  end
+
   require("blink-cmp").setup({
     keymap = {
       ["<C-q>"] = { "show", "fallback" },
@@ -31,7 +49,6 @@ M.config = function()
       ["<C-n>"] = { "select_next", "fallback" },
       ["<A-p>"] = { "select_prev", "fallback" },
       ["<A-n>"] = { "select_next", "fallback" },
-
     },
 
     appearance = {
@@ -64,35 +81,27 @@ M.config = function()
       },
     },
 
-    -- Default list of enabled providers defined so that you can extend it
-    -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       min_keyword_length = function(ctx)
-        -- only applies when typing a command, doesn't apply to arguments
         if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
           return 3
         end
         return 0
       end,
-      default = {
-        "lazydev",
-        "lsp",
-        "path",
-        "snippets",
-        "buffer",
-      },
+      default = default_sources,
       providers = {
         lazydev = {
           name = "LazyDev",
           module = "lazydev.integrations.blink",
-          -- make lazydev completions top priority (see `:h blink.cmp`)
           score_offset = 100,
         },
       },
     },
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+
+    fuzzy = { implementation = "prefer_rust_with_warning" },
   })
 end
+
 
 M.opts_extend = { "sources.default" }
 
