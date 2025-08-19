@@ -102,7 +102,7 @@ M.config = function()
 
   mason_lspconfig.setup({
     automatic_enable = true,
-    ensure_installed = vim.tbl_keys(servers),
+    -- ensure_installed = vim.tbl_keys(servers),
   })
 
   -- Some custom options for certain LSPs
