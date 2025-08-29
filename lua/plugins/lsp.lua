@@ -62,12 +62,14 @@ M.config = function()
     -- ty = {
     -- },
     basedpyright = {
-      python = {
-        analysis = {
-          root_dir = ".",
-          diagnosticMode = "openFilesOnly", -- ["openFilesOnly", "workspace"]
+      settings = {
+        basedpyright = {
+          analysis = {
+            root_dir = ".",
+            diagnosticMode = "workspace", -- ["openFilesOnly", "workspace"]
+          }
         },
-      },
+      }
     },
     gopls = {
       analyses = {
@@ -102,28 +104,14 @@ M.config = function()
 
   mason_lspconfig.setup({
     automatic_enable = true,
-    -- ensure_installed = vim.tbl_keys(servers),
+    ensure_installed = vim.tbl_keys(servers),
   })
 
-  -- Some custom options for certain LSPs
-  require("lspconfig")["html"].setup({
-    filetypes = { "html", "htmldjango" },
-  })
-
-  require("lspconfig")["docker_compose_language_service"].setup({
-    filetypes = { "yml", "yaml" },
-  })
-
-  -- Hardcoded and only for Windows for now
-  if vim.fn.has("win32") == 1 then
-    local nginx_lsp_path = vim.fn.expand("$USERPROFILE")
-        .. "/Python/3.11.9/Scripts/nginx-language-server.exe"
-    require("lspconfig")["nginx_language_server"].setup({
-      cmd = { nginx_lsp_path },
-      filetypes = { "nginx" },
-    })
+  for server, config in pairs(servers) do
+    vim.lsp.config(server, config)
   end
 
+  -- Some custom options for certain LSPs
   vim.lsp.config('vue_ls', {
     init_options = {
       vue = {
