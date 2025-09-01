@@ -81,6 +81,11 @@ M.config = function()
       },
     },
 
+    cmdline = {
+      keymap = { preset = 'inherit' },
+      completion = { menu = { auto_show = true } },
+    },
+
     sources = {
       min_keyword_length = function(ctx)
         if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
