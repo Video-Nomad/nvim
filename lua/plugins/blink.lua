@@ -81,10 +81,10 @@ M.config = function()
       },
     },
 
-    cmdline = {
-      keymap = { preset = 'inherit' },
-      completion = { menu = { auto_show = true } },
-    },
+    -- cmdline = {
+    --   keymap = { preset = 'inherit' },
+    --   completion = { menu = { auto_show = true } },
+    -- },
 
     sources = {
       min_keyword_length = function(ctx)

@@ -66,7 +66,7 @@ M.config = function()
         basedpyright = {
           analysis = {
             root_dir = ".",
-            diagnosticMode = "workspace", -- ["openFilesOnly", "workspace"]
+            diagnosticMode = "openFilesOnly", -- ["openFilesOnly", "workspace"]
           }
         },
       }
