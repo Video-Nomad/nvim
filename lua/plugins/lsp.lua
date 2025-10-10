@@ -54,13 +54,7 @@ M.config = function()
         templating = true,
       },
     },
-    clangd = {
-      -- root_dir = vim.lsp.buf.list_workspace_folders()
-    },
-    vue_ls = {
-    },
-    -- ty = {
-    -- },
+    clangd = {},
     basedpyright = {
       settings = {
         basedpyright = {
@@ -94,6 +88,8 @@ M.config = function()
     astro = {
       typescript = {},
     },
+    vue_ls = {},
+    vtsls = {},
   }
 
   -- Setup mason so it can manage external tooling
@@ -103,7 +99,11 @@ M.config = function()
   local mason_lspconfig = require("mason-lspconfig")
 
   mason_lspconfig.setup({
-    automatic_enable = true,
+    automatic_enable = {
+      exclude = {
+        "vue_ls", -- Already managed by vtsls
+      },
+    },
     ensure_installed = vim.tbl_keys(servers),
   })
 
@@ -111,15 +111,28 @@ M.config = function()
     vim.lsp.config(server, config)
   end
 
-  -- Some custom options for certain LSPs
-  vim.lsp.config('vue_ls', {
-    init_options = {
-      vue = {
-        -- disable hybrid mode
-        hybridMode = false,
+  -- Vue language server configuration
+  local vue_language_server_path = vim.fn.stdpath('data') ..
+      "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+  local vue_plugin = {
+    name = '@vue/typescript-plugin',
+    location = vue_language_server_path,
+    languages = { 'vue' },
+    configNamespace = 'typescript',
+  }
+  vim.lsp.config('vtsls', {
+    settings = {
+      vtsls = {
+        tsserver = {
+          globalPlugins = {
+            vue_plugin,
+          },
+        },
       },
     },
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
   })
 end
+
 
 return M
