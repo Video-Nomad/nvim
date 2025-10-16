@@ -43,10 +43,10 @@ M.config = function()
         'snippet_forward',
         'fallback'
       },
-      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<CR>"] = { "select_and_accept", "fallback" },
-      ["<C-p>"] = { "select_prev", "fallback" },
-      ["<C-n>"] = { "select_next", "fallback" },
+      ["<C-p>"] = { "select_prev", "cancel" },
+      ["<C-n>"] = { "select_next", "cancel" },
       ["<A-p>"] = { "select_prev", "fallback" },
       ["<A-n>"] = { "select_next", "fallback" },
     },

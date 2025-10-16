@@ -84,7 +84,6 @@ M.config = function()
     jsonls = {},
     ruff = {},
     docker_compose_language_service = {},
-    omnisharp = {},
     astro = {
       typescript = {},
     },
