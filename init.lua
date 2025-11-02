@@ -64,11 +64,9 @@ local lazy_opts = {
 }
 require("lazy").setup("plugins", lazy_opts)
 
-vim.cmd([[colorscheme onedark]])
-
 -- Load everything else
 require("settings")
 require("remap")
 require("commands")
-require("highlight")
+require("theme_switcher")
 require("lang")
