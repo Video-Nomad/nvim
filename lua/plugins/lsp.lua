@@ -110,6 +110,27 @@ M.config = function()
     vim.lsp.config(server, config)
   end
 
+  -- Esbonio post-install hook (for sphinx dependency)
+  local mason_registry = require("mason-registry")
+  local settings = require("mason.settings")
+  local Path = require("mason-core.path") -- safe path join helper used by mason
+  mason_registry:on("package:install:success", function(pkg)
+    if pkg.name == "esbonio" then
+      local install_root = settings.current.install_root_dir
+      local pkg_dir = Path.concat { install_root, "packages", pkg.name }
+      local venv_path
+      if vim.fn.has("win32") == 1 then
+        venv_path = pkg_dir .. "/venv/Scripts/pip.exe"
+      else
+        venv_path = pkg_dir .. "/venv/bin/pip"
+      end
+      vim.notify("Installing sphinx using " .. venv_path)
+      vim.schedule(function()
+        vim.fn.jobstart({ venv_path, "install", "sphinx" })
+      end)
+    end
+  end)
+
   -- Vue language server configuration
   local vue_language_server_path = vim.fn.stdpath('data') ..
       "/mason/packages/vue-language-server/node_modules/@vue/language-server"

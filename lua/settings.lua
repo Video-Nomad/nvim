@@ -65,7 +65,7 @@ vim.cmd([[
 -- Enable break indent
 vim.o.breakindent = true
 vim.o.linebreak = true
-vim.o.showbreak = "   ↪"
+vim.o.showbreak = "↪"
 -- vim.opt.display = 'lastline'
 vim.o.wrap = false
 
