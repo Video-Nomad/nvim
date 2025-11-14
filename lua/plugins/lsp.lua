@@ -124,9 +124,10 @@ M.config = function()
       else
         venv_path = pkg_dir .. "/venv/bin/pip"
       end
-      vim.notify("Installing sphinx using " .. venv_path)
       vim.schedule(function()
         vim.fn.jobstart({ venv_path, "install", "sphinx" })
+        vim.fn.jobstart({ venv_path, "install", "sphinx_rtd_theme" })
+        vim.fn.jobstart({ venv_path, "install", "sphinx_copybutton" })
       end)
     end
   end)
