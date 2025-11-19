@@ -2,7 +2,7 @@ local M = { "navarasu/onedark.nvim" }
 
 M.lazy = false
 M.priority = 1000
-M.version = "v0.1.0"
+-- M.version = "v0.1.0"
 
 M.config = function()
   require("onedark").setup({
@@ -46,6 +46,8 @@ M.config = function()
 
       ["@function.builtin"] = { fg = "#61afef" },
       ["@lsp.typemod.variable.readonly.python"] = { fg = "#d19a66" },
+      ["@nospell"] = { fg = "none" },
+      ["@spell"] = { fg = "none" },
     },
     diagnostics = {
       darker = true,

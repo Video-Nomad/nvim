@@ -5,6 +5,7 @@ M.event = "VeryLazy"
 M.dependencies = {
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
 }
 
 M.config = function()
@@ -65,13 +66,13 @@ M.config = function()
         },
       }
     },
-    gopls = {
-      analyses = {
-        unusedparams = true,
-      },
-      staticcheck = true,
-      gofumpt = true,
-    },
+    -- gopls = {
+    --   analyses = {
+    --     unusedparams = true,
+    --   },
+    --   staticcheck = true,
+    --   gofumpt = true,
+    -- },
     lua_ls = {
       Lua = {
         workspace = { checkThirdParty = false },
@@ -96,6 +97,7 @@ M.config = function()
 
   -- Ensure the servers above are installed
   local mason_lspconfig = require("mason-lspconfig")
+  local mason_tool_installer = require("mason-tool-installer")
 
   mason_lspconfig.setup({
     automatic_enable = {
@@ -103,6 +105,9 @@ M.config = function()
         "vue_ls", -- Already managed by vtsls
       },
     },
+
+  })
+  mason_tool_installer.setup({
     ensure_installed = vim.tbl_keys(servers),
   })
 
