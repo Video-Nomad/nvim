@@ -48,6 +48,7 @@ M.config = function()
       ["@lsp.typemod.variable.readonly.python"] = { fg = "#d19a66" },
       ["@nospell"] = { fg = "none" },
       ["@spell"] = { fg = "none" },
+      ["@conceal"] = { fg = "none" },
     },
     diagnostics = {
       darker = true,

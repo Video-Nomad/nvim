@@ -74,6 +74,12 @@ function M:load_highlights(color_table)
   vim.api.nvim_set_hl(0, "IblWhitespace", { fg = color_table.indent_blankline.whitespace })
   vim.api.nvim_set_hl(0, "IblScope", { fg = color_table.indent_blankline.scope })
 
+  -- Indentmini
+  vim.api.nvim_set_hl(0, "IndentLine", { fg = color_table.indent_blankline.indent })
+  vim.api.nvim_set_hl(0, "IndentLineCurrent", { fg = color_table.indent_blankline.scope })
+
+
+
   vim.api.nvim_set_hl(0, "NvimSurroundHighlight",
     { fg = color_table.nvim_surround.highlight_fg, bg = color_table.nvim_surround.highlight_bg })
 
