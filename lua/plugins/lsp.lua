@@ -99,16 +99,14 @@ M.config = function()
   local mason_lspconfig = require("mason-lspconfig")
   local mason_tool_installer = require("mason-tool-installer")
 
-  mason_lspconfig.setup({
+  mason_lspconfig.setup({})
+  mason_tool_installer.setup({
+    ensure_installed = vim.tbl_keys(servers),
     automatic_enable = {
       exclude = {
         "vue_ls", -- Already managed by vtsls
-      },
-    },
-
-  })
-  mason_tool_installer.setup({
-    ensure_installed = vim.tbl_keys(servers),
+      }
+    }
   })
 
   for server, config in pairs(servers) do
@@ -158,6 +156,12 @@ M.config = function()
     },
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
   })
+
+  -- Other servers
+  vim.lsp.config('ty', {})
+  vim.lsp.enable('ty')
+  vim.lsp.config('gdscript', {})
+  vim.lsp.enable('gdscript')
 end
 
 

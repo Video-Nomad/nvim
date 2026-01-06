@@ -18,13 +18,23 @@ M.keys = {
 M.config = function()
   local utils = require("utils")
   require("neo-tree").setup({
-    -- source_selector = {
-    --   winbar = true,
-    --   statusline = true,
-    -- },
     filesystem = {
       follow_current_file = { enabled = true },
       hijack_netrw_behavior = "open_current",
+      filtered_items = {
+        hide_by_pattern = {
+          "*.gd.uid",
+          "*.tmp",
+          "*.svg*",
+          "*.exe",
+          "*.dll",
+          "*.pck",
+        },
+        always_show = {
+          ".gitignore",
+          ".env",
+        }
+      },
       commands = {
         -- Override the delete command to move to trash
         delete = function(state)
@@ -82,10 +92,6 @@ M.config = function()
     },
     window = {
       width = 34,
-      -- mappings = {
-      --   ["<A-,>"] = "prev_source",
-      --   ["<A-.>"] = "next_source",
-      -- },
     },
   })
 end
