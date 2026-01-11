@@ -2,6 +2,24 @@ local utils = require("utils")
 -- BASIC KEYMAPS
 local map = vim.keymap.set
 
+-- LSP keymaps
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+map("n", "<leader>ih", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "[I]nlay [H]int Toggle" })
+
+-- Signature help and hover
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+map({ "n", "i", "s" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Documentation", silent = true })
+
+-- Lesser used LSP functionality
+map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "[W]orkspace [A]dd Folder" })
+map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "[W]orkspace [R]emove Folder" })
+map("n", "<leader>wl", function()
+  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end, { desc = "[W]orkspace [L]ist Folders" })
+
 -- WM stuff
 map({ "n", "v", "i" }, "<F23>", "<Nop>", { silent = true })
 
