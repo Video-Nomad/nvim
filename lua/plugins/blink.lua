@@ -8,8 +8,7 @@ M.dependencies = {
 
 M.event = "VeryLazy"
 
-M.version = "1.*"
-
+M.build = "cargo build --release"
 
 M.config = function()
   local ft = vim.bo.filetype
@@ -32,7 +31,7 @@ M.config = function()
   require("blink-cmp").setup({
     keymap = {
       ["<C-q>"] = { "show", "fallback" },
-      ['<Tab>'] = {
+      ["<Tab>"] = {
         function(cmp)
           if cmp.snippet_active() then
             return cmp.accept()
@@ -40,8 +39,8 @@ M.config = function()
             return cmp.select_and_accept()
           end
         end,
-        'snippet_forward',
-        'fallback'
+        "snippet_forward",
+        "fallback",
       },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<CR>"] = { "select_and_accept", "fallback" },
@@ -64,12 +63,12 @@ M.config = function()
         auto_show_delay_ms = 300,
         window = {
           border = "none",
-        }
+        },
       },
       menu = {
         border = "none",
         auto_show_delay_ms = 200,
-      }
+      },
     },
 
     snippets = { preset = "default" },
@@ -81,11 +80,6 @@ M.config = function()
         border = "none",
       },
     },
-
-    -- cmdline = {
-    --   keymap = { preset = 'inherit' },
-    --   completion = { menu = { auto_show = true } },
-    -- },
 
     sources = {
       min_keyword_length = function(ctx)
@@ -104,10 +98,16 @@ M.config = function()
       },
     },
 
-    fuzzy = { implementation = "prefer_rust_with_warning" },
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      frecency = {
+        enabled = true,
+        path = vim.fn.stdpath("state") .. "/blink/cmp/frecency.dat",
+      },
+      use_proximity = true,
+    },
   })
 end
-
 
 M.opts_extend = { "sources.default" }
 
