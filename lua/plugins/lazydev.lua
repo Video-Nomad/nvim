@@ -2,11 +2,14 @@ local M = { "folke/lazydev.nvim" }
 
 M.ft = "lua" -- only load on lua files
 
+-- Neovim nvim-data folder
+-- local data = vim.fn.stdpath("data")
+
 M.opts = {
   library = {
-    -- See the configuration section for more details
-    -- Load luvit types when the `vim.uv` word is found
-    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+    { path = "luvit-meta/library", words = { "vim%.uv" } },
+    "lazy.nvim",
+    { path = "snacks.nvim", words = { "Snacks" } },
   },
 }
 

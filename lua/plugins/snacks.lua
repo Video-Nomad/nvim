@@ -1,9 +1,14 @@
 local M = { "folke/snacks.nvim" }
 
+M.lazy = false
+
 ---@type snacks.Config
 M.opts = {
   statuscolumn = {
     enabled = false,
+  },
+  rename = {
+    enabled = true
   },
   picker = {
     win = {
@@ -21,7 +26,7 @@ M.opts = {
 }
 
 local files_config = {
-  exclude = { "*.png" },
+  exclude = { "*.png", "*.svg" },
 }
 
 ---@type snacks.picker.lsp.symbols.Config

@@ -1,4 +1,7 @@
+---@module "neo-tree"
+
 local M = { "nvim-neo-tree/neo-tree.nvim" }
+
 M.branch = "v3.x"
 
 M.dependencies = {
@@ -16,6 +19,11 @@ M.keys = {
 }
 
 M.config = function()
+  -- Snacks LSP rename callback
+  local function on_move(data)
+    Snacks.rename.on_rename_file(data.source, data.destination)
+  end
+
   local utils = require("utils")
   require("neo-tree").setup({
     filesystem = {
@@ -25,7 +33,6 @@ M.config = function()
         hide_by_pattern = {
           "*.gd.uid",
           "*.tmp",
-          "*.svg*",
           "*.exe",
           "*.dll",
           "*.pck",
@@ -33,7 +40,7 @@ M.config = function()
         always_show = {
           ".gitignore",
           ".env",
-        }
+        },
       },
       commands = {
         -- Override the delete command to move to trash
@@ -92,6 +99,19 @@ M.config = function()
     },
     window = {
       width = 34,
+    },
+    -- LSP renames and moves
+    event_handlers = {
+      {
+        event = "file_moved",
+        handler = on_move,
+        id = "LSP file moved",
+      },
+      {
+        event = "file_renamed",
+        handler = on_move,
+        id = "LSP file renamed",
+      },
     },
   })
 end

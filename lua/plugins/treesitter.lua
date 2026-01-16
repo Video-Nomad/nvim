@@ -8,36 +8,13 @@ end
 
 M.dependencies = {
   "nvim-treesitter/nvim-treesitter-textobjects",
-  -- "nvim-treesitter/playground",
 }
 
 M.config = function()
   -- See `:help nvim-treesitter`
   require("nvim-treesitter.configs").setup({
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = {
-      "c",
-      "cpp",
-      "css",
-      "go",
-      "html",
-      "htmldjango",
-      "javascript",
-      "typescript",
-      "astro",
-      "vue",
-      "json",
-      "lua",
-      "markdown",
-      "markdown_inline",
-      "python",
-      "regex",
-      "rust",
-      "scss",
-      "toml",
-      "vim",
-      "yaml"
-    },
+    ensure_installed = {},
     ignore_install = {},
     modules = {},
 
