@@ -26,7 +26,7 @@ M.opts = {
 }
 
 local files_config = {
-  exclude = { "*.png", "*.svg" },
+  exclude = { "*.png", "*.svg", "*.uid", "*.import" },
 }
 
 ---@type snacks.picker.lsp.symbols.Config

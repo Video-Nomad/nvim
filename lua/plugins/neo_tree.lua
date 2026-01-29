@@ -27,6 +27,7 @@ M.config = function()
   local utils = require("utils")
   require("neo-tree").setup({
     filesystem = {
+      group_empty_dirs = true,
       follow_current_file = { enabled = true },
       hijack_netrw_behavior = "open_current",
       filtered_items = {
@@ -36,6 +37,8 @@ M.config = function()
           "*.exe",
           "*.dll",
           "*.pck",
+          "*.uid",
+          "*.import",
         },
         always_show = {
           ".gitignore",
