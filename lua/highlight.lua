@@ -78,7 +78,9 @@ function M:load_highlights(color_table)
   vim.api.nvim_set_hl(0, "IndentLine", { fg = color_table.indent_blankline.indent })
   vim.api.nvim_set_hl(0, "IndentLineCurrent", { fg = color_table.indent_blankline.scope })
 
-
+  -- Gray out hidden files and folders when they are shown
+  vim.api.nvim_set_hl(0, "NvimTreeHiddenFile", { link = "Comment" })
+  vim.api.nvim_set_hl(0, "NvimTreeHiddenFolder", { link = "Comment" })
 
   vim.api.nvim_set_hl(0, "NvimSurroundHighlight",
     { fg = color_table.nvim_surround.highlight_fg, bg = color_table.nvim_surround.highlight_bg })
