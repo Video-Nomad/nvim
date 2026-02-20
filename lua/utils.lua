@@ -126,15 +126,15 @@ function utils:move_to_recycle_bin(path)
       $path = %s;
       if (Test-Path -LiteralPath $path -PathType Leaf) {
         [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile(
-          $path, 
-          'OnlyErrorDialogs', 
+          $path,
+          'OnlyErrorDialogs',
           'SendToRecycleBin'
         )
       }
       elseif (Test-Path -LiteralPath $path -PathType Container) {
         [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteDirectory(
-          $path, 
-          'OnlyErrorDialogs', 
+          $path,
+          'OnlyErrorDialogs',
           'SendToRecycleBin',
           'DoNothing'
         )

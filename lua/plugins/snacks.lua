@@ -8,7 +8,7 @@ M.opts = {
     enabled = false,
   },
   rename = {
-    enabled = true
+    enabled = true,
   },
   picker = {
     win = {
@@ -18,15 +18,18 @@ M.opts = {
           ["<c-p>"] = { "toggle_preview", mode = { "i", "n" } },
           ["<a-n>"] = { "list_down", mode = { "i", "n" } },
           ["<a-p>"] = { "list_up", mode = { "i", "n" } },
-        }
-      }
-
-    }
+        },
+      },
+    },
   },
 }
 
 local files_config = {
   exclude = { "*.png", "*.svg", "*.uid", "*.import" },
+}
+
+local grep_config = {
+  exclude = { "schema.json" },
 }
 
 ---@type snacks.picker.lsp.symbols.Config
@@ -38,6 +41,7 @@ local workspace_symbols_config = {
   limit = 250,
 }
 
+-- stylua: ignore start
 M.keys = {
   -- find
   { "<leader><space>", function() Snacks.picker.buffers() end,                                       desc = "Buffers" },
@@ -46,7 +50,7 @@ M.keys = {
   { "<leader>pm",      function() Snacks.picker.projects() end,                                      desc = "Projects" },
   { "<leader>?",       function() Snacks.picker.recent() end,                                        desc = "Recent" },
   { "<leader>sh",      function() Snacks.picker.help() end,                                          desc = "Help Pages" },
-  { "<leader>sg",      function() Snacks.picker.grep() end,                                          desc = "Grep" },
+  { "<leader>sg",      function() Snacks.picker.grep(grep_config) end,                                          desc = "Grep" },
   { "<leader>/",       function() Snacks.picker.lines() end,                                         desc = "Buffer Lines" },
   { "<leader>gs",      function() Snacks.picker.git_status() end,                                    desc = "Git Status" },
   { "<leader>sd",      function() Snacks.picker.diagnostics() end,                                   desc = "Diagnostics" },
@@ -67,6 +71,6 @@ M.keys = {
   { "<leader>bb",      function() Snacks.picker.marks() end,                                         desc = "Bookmarks" },
 
 }
-
+-- stylua: ignore end
 
 return M
