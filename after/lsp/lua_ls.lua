@@ -2,7 +2,7 @@
 return {
   settings = {
     Lua = {
-      workspace = { checkThirdParty = false },
+      workspace = { checkThirdParty = true },
       telemetry = { enable = false },
       diagnostics = {
         disable = { "missing-fields" },
