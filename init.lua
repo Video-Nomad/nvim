@@ -65,6 +65,7 @@ local lazy_opts = {
 require("lazy").setup("plugins", lazy_opts)
 
 -- Load everything else
+require("shada_cleaner")
 require("symlink_resolver")
 require("settings")
 require("remap")

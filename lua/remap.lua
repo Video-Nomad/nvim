@@ -27,8 +27,8 @@ map({ "n", "v", "i" }, "<F23>", "<Nop>", { silent = true })
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Remap for dealing with word wrap
-map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Format file or region
 map({ "v", "n" }, "<leader>ff", function()
@@ -36,8 +36,12 @@ map({ "v", "n" }, "<leader>ff", function()
 end, { desc = "[F]ormat [F]ile or selection" })
 
 -- Diagnostic keymaps
-map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end)
-map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end)
+map("n", "[d", function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end)
+map("n", "]d", function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end)
 map("n", "<leader>q", vim.diagnostic.setloclist)
 map("n", "<leader>e", vim.diagnostic.open_float)
 
@@ -128,8 +132,8 @@ map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
 
 -- Keep the cursor in the middle during jumplist navigation
-map('n', '<C-i>', '<C-i>zz', { noremap = true })
-map('n', '<C-o>', '<C-o>zz', { noremap = true })
+map("n", "<C-i>", "<C-i>zz", { noremap = true })
+map("n", "<C-o>", "<C-o>zz", { noremap = true })
 
 -- Keep search terms in the middle
 map("n", "n", "nzzzv", { silent = true })
