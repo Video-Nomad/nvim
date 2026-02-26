@@ -25,11 +25,11 @@ M.opts = {
 }
 
 local files_config = {
-  exclude = { "*.png", "*.svg", "*.uid", "*.import" },
+  exclude = { "*.png", "*.svg", "*.uid", "*.import", "vendor" },
 }
 
 local grep_config = {
-  exclude = { "schema.json" },
+  exclude = { "schema.json", "*/vendor/*" },
 }
 
 ---@type snacks.picker.lsp.symbols.Config
