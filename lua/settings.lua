@@ -38,7 +38,7 @@ utils:restore_cursor_setup()
 vim.opt.clipboard = "unnamedplus"
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.o.incsearch = true
 
 -- Indents
