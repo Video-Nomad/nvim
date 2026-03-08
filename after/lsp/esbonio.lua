@@ -5,7 +5,7 @@ local config = {
   root_markers = { ".git" },
 }
 
-if vim.fn.executable("esbonio") ~= 1 then
+if not vim.fn.executable("esbonio") then
   vim.notify("Esbonio not found. Attempting to install with uv...", vim.log.levels.INFO)
 
   vim.fn.system({
