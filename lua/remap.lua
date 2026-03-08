@@ -45,9 +45,6 @@ end)
 map("n", "<leader>q", vim.diagnostic.setloclist)
 map("n", "<leader>e", vim.diagnostic.open_float)
 
--- Clear highlights
-vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
-
 -- Resize splits ------------------------------------------
 -- Increase width of current split when it's on the right
 vim.keymap.set("n", "<A-Left>", function()
