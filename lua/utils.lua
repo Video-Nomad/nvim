@@ -120,7 +120,7 @@ end
 function utils:move_to_recycle_bin(path)
   if vim.fn.has("win32") == 1 then
     -- Some powershell stuff for Windows
-    local path_escaped = vim.fn.shellescape(path, 1)
+    local path_escaped = vim.fn.shellescape(path, true)
     local command = string.format(
       [[Add-Type -AssemblyName Microsoft.VisualBasic;
       $path = %s;
@@ -144,7 +144,7 @@ function utils:move_to_recycle_bin(path)
     vim.fn.system({ "powershell", "-Command", command })
   else
     -- Regular "trash" command for Linux
-    vim.fn.system({ "trash", vim.fn.fnameescape(path) })
+    vim.fn.system({ "gio", "trash", vim.fn.fnameescape(path) })
   end
 end
 

@@ -12,7 +12,7 @@ M.dependencies = {
 
 M.config = function()
   -- See `:help nvim-treesitter`
-  require("nvim-treesitter.configs").setup({
+  require("nvim-treesitter").setup({
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = {},
     ignore_install = {},
