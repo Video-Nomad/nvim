@@ -49,18 +49,19 @@ M.config = function()
     end
   end)
 
-  set("n", "<esc>", function()
+  set("n", "<esc><esc>", function()
     if not mc.cursorsEnabled() then
       mc.enableCursors()
     elseif mc.hasCursors() then
       mc.clearCursors()
     else
       vim.cmd("nohlsearch")
+      vim.snippet.stop()
     end
   end)
 
   -- Align cursor columns.
-  set("n", "<leader>a", mc.alignCursors)
+  -- set("n", "<leader>a", mc.alignCursors)
 
   -- Split visual selections by regex.
   set("v", "<a-S>", mc.splitCursors)

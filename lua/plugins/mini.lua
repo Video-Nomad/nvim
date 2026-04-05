@@ -9,7 +9,7 @@ M.keys = {
   { "H", mode = "v", desc = "Move left" },
   { "L", mode = "v", desc = "Move right" },
   -- Align mappings
-  { "ga", mode = "n", desc = "Align to the character" },
+  { "ga", mode = { "n", "v" }, desc = "Align to the character" },
 }
 
 M.config = function()

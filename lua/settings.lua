@@ -37,6 +37,9 @@ utils:restore_cursor_setup()
 -- Use Windows clipboard by default
 vim.opt.clipboard = "unnamedplus"
 
+-- Disable default neovim hex color handling
+vim.lsp.document_color.enable(false)
+
 -- Set highlight on search
 vim.o.hlsearch = true
 vim.o.incsearch = true

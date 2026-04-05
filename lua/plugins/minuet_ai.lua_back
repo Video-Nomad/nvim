@@ -1,0 +1,62 @@
+local M = { "milanglacier/minuet-ai.nvim" }
+
+M.dependencies = {
+  "nvim-lua/plenary.nvim",
+}
+
+M.config = function()
+  require("minuet").setup({
+    virtualtext = {
+      auto_trigger_ft = {},
+      keymap = {
+        -- accept whole completion
+        accept = "<A-A>",
+        -- accept one line
+        accept_line = "<A-a>",
+        -- accept n lines (prompts for number)
+        -- e.g. "A-z 2 CR" will accept 2 lines
+        accept_n_lines = "<A-z>",
+        -- Cycle to prev completion item, or manually invoke completion
+        prev = "<A-[>",
+        -- Cycle to next completion item, or manually invoke completion
+        next = "<A-]>",
+        dismiss = "<A-e>",
+      },
+    },
+    provider = "gemini",
+    provider_options = {
+      gemini = {
+        model = "gemini-flash-lite-latest",
+        stream = true,
+        api_key = "GEMINI_API_KEY",
+        end_point = "https://generativelanguage.googleapis.com/v1beta/models",
+        optional = {
+          generationConfig = {
+            maxOutputTokens = 256,
+            -- thinkingConfig = {
+            --   Disable thinking for gemini 2.5 models
+            --   thinkingBudget = 0,
+            --   Disable thinking for gemini 3.x models
+            --   thinkingLevel = "minimal",
+            --   Setting only one of the above options is sufficient.
+            -- },
+          },
+          safetySettings = {
+            {
+              -- HARM_CATEGORY_HATE_SPEECH,
+              -- HARM_CATEGORY_HARASSMENT
+              -- HARM_CATEGORY_SEXUALLY_EXPLICIT
+              category = "HARM_CATEGORY_DANGEROUS_CONTENT",
+              -- BLOCK_NONE
+              threshold = "BLOCK_ONLY_HIGH",
+            },
+          },
+        },
+        -- a list of functions to transform the endpoint, header, and request body
+        transform = {},
+      },
+    },
+  })
+end
+
+return M
