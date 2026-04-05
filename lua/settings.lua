@@ -101,11 +101,18 @@ vim.o.pumheight = 11
 vim.o.winborder = "rounded"
 
 -- Change diagnostic signs (icons)
-local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+local sev = vim.diagnostic.severity
+vim.diagnostic.config({
+  severity_sort = true,
+  signs = {
+    text = {
+      [sev.ERROR] = "󰅚 ",
+      [sev.WARN] = "󰀪 ",
+      [sev.INFO] = " ",
+      [sev.HINT] = "󰌶 ",
+    },
+  },
+})
 
 -- Add rounded corners to diagnostic window popup
 vim.diagnostic.config({
