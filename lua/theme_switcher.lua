@@ -86,16 +86,38 @@ local colors_light = {
   },
 }
 
-local function apply_theme(mode)
-  -- 1. Clear existing highlights to prevent theme bleeding
-  vim.cmd("highlight clear")
+local current_mode = "dark"
 
-  -- (Optional but recommended) Reset syntax to defaults
+local function persist_file()
+  return vim.fn.stdpath("data") .. "/theme_mode"
+end
+
+local function save_mode(mode)
+  local f = io.open(persist_file(), "w")
+  if f then
+    f:write(mode)
+    f:close()
+  end
+end
+
+local function load_mode()
+  local f = io.open(persist_file(), "r")
+  if f then
+    local m = f:read("*l")
+    f:close()
+    if m == "dark" or m == "light" then
+      return m
+    end
+  end
+  return "dark"
+end
+
+local function apply_theme(mode)
+  vim.cmd("highlight clear")
   if vim.g.syntax_on ~= nil then
     vim.cmd("syntax reset")
   end
 
-  -- 2. Apply the new theme
   if mode == "light" then
     vim.o.background = "light"
     vim.cmd([[colorscheme catppuccin-latte]])
@@ -108,14 +130,15 @@ local function apply_theme(mode)
 end
 
 function M.toggle_theme()
-  if vim.o.background == "dark" then
-    apply_theme("light")
+  if current_mode == "dark" then
+    current_mode = "light"
   else
-    apply_theme("dark")
+    current_mode = "dark"
   end
+  apply_theme(current_mode)
+  save_mode(current_mode)
 end
 
--- Robust override via Autocmd
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     vim.schedule(function()
@@ -125,8 +148,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
--- Init
-apply_theme("dark")
+-- Init: restore last mode
+current_mode = load_mode()
+apply_theme(current_mode)
 
 -- Command
 vim.api.nvim_create_user_command("ToggleLightMode", M.toggle_theme, {})
