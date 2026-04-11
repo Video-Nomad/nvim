@@ -22,8 +22,11 @@ function M.load_highlights(color_table)
     pattern = "*",
   })
 
+  -- Status line
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = color_table.status_line, fg = color_table.status_line_fg })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color_table.status_line_nc, fg = color_table.status_line_nc_fg })
+
   -- Floating window colors
-  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color_table.status_line_nc })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = color_table.normal_float })
   vim.api.nvim_set_hl(0, "FloatBorder", { bg = color_table.float_border })
 

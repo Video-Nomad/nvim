@@ -39,9 +39,9 @@ M.config = function()
   }
   local one_dark = {
     inactive = {
-      a = { fg = colors.green, bg = "#1d242f", gui = "bold" },
-      b = { fg = colors.green, bg = "#1d242f" },
-      c = { fg = colors.green, bg = "#1d242f" },
+      a = { fg = colors.green, bg = c.none, gui = "bold" },
+      b = { fg = colors.green, bg = c.none },
+      c = { fg = colors.green, bg = c.none },
     },
     normal = {
       a = { fg = colors.green, bg = c.none, gui = "bold" },
@@ -54,12 +54,24 @@ M.config = function()
     command = { a = { fg = colors.yellow, bg = c.none, gui = "bold" } },
     terminal = { a = { fg = colors.cyan, bg = c.none, gui = "bold" } },
   }
+  local function get_theme()
+    return vim.o.background == "light" and "catppuccin-latte" or one_dark
+  end
+
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+      vim.schedule(function()
+        require("lualine").setup({ options = { theme = get_theme() } })
+      end)
+    end,
+  })
+
   require("lualine").setup({
     options = {
       icons_enabled = true,
-      theme = one_dark,
+      theme = get_theme(),
       component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       disabled_filetypes = {
         statusline = {},
         winbar = {},

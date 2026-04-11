@@ -28,7 +28,10 @@
 ---@field highlight_bg string
 
 ---@class ColorTable
+---@field status_line string
+---@field status_line_fg string
 ---@field status_line_nc string
+---@field status_line_nc_fg string
 ---@field cursor_line string
 ---@field normal_float string
 ---@field float_border string

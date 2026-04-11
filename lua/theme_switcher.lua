@@ -1,6 +1,7 @@
 local M = {}
 
 local colors_dark = {
+  status_line = "#1e1e1e",
   status_line_nc = "#282c34",
   normal_float = "#202020",
   float_border = "none",
@@ -44,6 +45,7 @@ local colors_dark = {
 }
 
 local colors_light = {
+  status_line = "#acb0be",
   status_line_nc = "#ccd0da",
   normal_float = "#e6e9ef",
   float_border = "none",
