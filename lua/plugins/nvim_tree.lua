@@ -102,6 +102,12 @@ M.config = function()
         },
       },
     },
+    filesystem_watchers = {
+      ignore_dirs = {
+        ".venv",
+        "__cmake_systeminformation",
+      },
+    },
     filters = {
       dotfiles = true,
       custom = {
