@@ -12,7 +12,6 @@ M.config = function()
       ephemeral = true,
     },
   })
-  indentline.disable()
   vim.keymap.set("n", "<leader>in", indentline.toggle, { desc = "Toggle IndentLine" })
 end
 
