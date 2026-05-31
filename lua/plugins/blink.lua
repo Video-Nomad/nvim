@@ -1,14 +1,17 @@
 local M = { "saghen/blink.cmp" }
 
 M.dependencies = {
+  "saghen/blink.lib",
   "rafamadriz/friendly-snippets",
-  "folke/neodev.nvim",
-  { "L3MON4D3/LuaSnip", version = "v2.*" },
+  -- "folke/neodev.nvim",
+  -- { "L3MON4D3/LuaSnip", version = "v2.*" },
 }
 
 M.event = "VeryLazy"
 
-M.build = "cargo build --release"
+M.build = function()
+  require("blink.cmp").build():wait(60000)
+end
 
 M.config = function()
   local ft = vim.bo.filetype
@@ -28,7 +31,7 @@ M.config = function()
     end, default_sources)
   end
 
-  require("blink-cmp").setup({
+  require("blink.cmp").setup({
     keymap = {
       ["<C-q>"] = { "show", "fallback" },
       ["<Tab>"] = {
@@ -100,10 +103,7 @@ M.config = function()
 
     fuzzy = {
       implementation = "prefer_rust_with_warning",
-      frecency = {
-        enabled = true,
-        path = vim.fn.stdpath("state") .. "/blink/cmp/frecency.dat",
-      },
+      -- frecency = true,
       use_proximity = true,
     },
   })
