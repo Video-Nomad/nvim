@@ -7,10 +7,10 @@ M.dependencies = {
   -- { "L3MON4D3/LuaSnip", version = "v2.*" },
 }
 
-M.event = "VeryLazy"
+M.lazy = false
 
 M.build = function()
-  require("blink.cmp").build():wait(60000)
+  require("blink.cmp").build():pwait()
 end
 
 M.config = function()
@@ -47,10 +47,8 @@ M.config = function()
       },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<CR>"] = { "select_and_accept", "fallback" },
-      ["<C-p>"] = { "select_prev", "fallback" },
-      ["<C-n>"] = { "select_next", "fallback" },
-      ["<A-p>"] = { "select_prev", "fallback" },
-      ["<A-n>"] = { "select_next", "fallback" },
+      ["<A-p>"] = { "select_prev" },
+      ["<A-n>"] = { "select_next" },
     },
 
     appearance = {

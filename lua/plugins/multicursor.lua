@@ -49,7 +49,7 @@ M.config = function()
     end
   end)
 
-  set("n", "<esc><esc>", function()
+  set("n", "<Esc>", function()
     if not mc.cursorsEnabled() then
       mc.enableCursors()
     elseif mc.hasCursors() then
@@ -57,6 +57,11 @@ M.config = function()
     else
       vim.cmd("nohlsearch")
       vim.snippet.stop()
+      vim.api.nvim_feedkeys(
+        vim.api.nvim_replace_termcodes("<Esc>", true, false, true),
+        "n", -- no-remap: won't re-trigger this mapping
+        false
+      )
     end
   end)
 

@@ -2,7 +2,7 @@ local M = { "NvChad/nvterm" }
 
 M.keys = {
   {
-    "<A-s>",
+    "<C-`>",
     function()
       require("nvterm.terminal").toggle("horizontal")
     end,

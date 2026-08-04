@@ -121,6 +121,7 @@ M.config = function()
       },
       exclude = {
         ".gitignore",
+        ".gitattributes",
         ".env",
         ".github",
       },

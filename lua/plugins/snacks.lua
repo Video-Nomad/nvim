@@ -29,7 +29,7 @@ local files_config = {
 }
 
 local grep_config = {
-  exclude = { "schema.json", "*/vendor/*" },
+  exclude = { "schema.json", "*/vendor/*", "/vendor" },
 }
 
 ---@type snacks.picker.lsp.symbols.Config
