@@ -68,7 +68,6 @@ M.config = function()
       },
       menu = {
         border = "none",
-        auto_show_delay_ms = 200,
       },
     },
 
