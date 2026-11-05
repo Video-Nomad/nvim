@@ -9,11 +9,42 @@ M.lazy = false
 M.build = ":TSUpdate"
 
 M.config = function()
-  require("nvim-treesitter").setup({})
+  local ts = require("nvim-treesitter")
+
+  ts.setup({})
+  local pending_installs = {}
+
   vim.api.nvim_create_autocmd("FileType", {
-    callback = function()
-      pcall(vim.treesitter.start)
-      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    group = vim.api.nvim_create_augroup("TreesitterAutoInstall", { clear = true }),
+    callback = function(event)
+      local lang = vim.treesitter.language.get_lang(event.match)
+      if not lang or not vim.list_contains(ts.get_available(), lang) then
+        return
+      end
+
+      -- Share an in-flight install when several buffers use the same parser.
+      local task = pending_installs[lang]
+      if not task then
+        task = ts.install({ lang })
+        pending_installs[lang] = task
+        task:await(function()
+          pending_installs[lang] = nil
+        end)
+      end
+
+      task:await(vim.schedule_wrap(function(err, installed)
+        if err or not installed then
+          return
+        end
+        if not vim.api.nvim_buf_is_loaded(event.buf) or vim.bo[event.buf].filetype ~= event.match then
+          return
+        end
+
+        pcall(vim.treesitter.start, event.buf)
+        if event.match ~= "qml" then
+          vim.bo[event.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      end))
     end,
   })
 

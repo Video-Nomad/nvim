@@ -4,5 +4,6 @@ local M = {}
 vim.lsp.enable("gdscript")
 vim.lsp.enable("esbonio")
 vim.lsp.enable("cmake")
+vim.lsp.enable("qmlls")
 
 return M

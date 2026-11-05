@@ -7,7 +7,7 @@ M.priority = 1000
 M.config = function()
   require("onedark").setup({
     style = "darker",
-    transparent = true,
+    transparent = not vim.g.neovide,
     -- term_colors = true,
     ending_tildes = false,
     cmp_itemkind_reverse = false,

@@ -1,5 +1,8 @@
 -- Main entry point for Neovim
 
+-- Lazy should already enable this but just in case
+vim.loader.enable(true)
+
 -- Installing Lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_lstat(lazypath) then
@@ -33,31 +36,15 @@ local lazy_opts = {
   performance = {
     rtp = {
       disabled_plugins = {
-        "netrw",
-        "netrwPlugin",
-        "2html_plugin",
-        "tohtml",
-        "getscript",
-        "getscriptPlugin",
         "gzip",
-        "logipat",
-        "matchit",
-        "tar",
         "tarPlugin",
-        "rrhelper",
-        "spellfile_plugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
         "zipPlugin",
+        "tohtml",
         "tutor",
+        "netrwPlugin",
         "rplugin",
-        "syntax",
-        "synmenu",
-        "optwin",
-        "compiler",
-        "bugreport",
-        "ftplugin",
+        -- "matchit",
+        -- "matchparen",
       },
     },
   },
@@ -65,6 +52,7 @@ local lazy_opts = {
 require("lazy").setup("plugins", lazy_opts)
 
 -- Load everything else
+require("neovide")
 require("autoread")
 require("shada_cleaner")
 require("symlink_resolver")
